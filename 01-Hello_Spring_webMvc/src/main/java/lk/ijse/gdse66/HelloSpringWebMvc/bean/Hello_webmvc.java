@@ -23,25 +23,25 @@ public class Hello_webmvc {
     }*/
 
     @GetMapping
-    public String  myMethod(){
+    public String  handleGetMethod(){
         System.out.println("MyMethod");
         return "Get";
     }
 
     @DeleteMapping
-    public String  myMethod2(){
+    public String  handleDeleteMethod(){
         System.out.println("Delete");
         return "Delete";
     }
 
     @PostMapping
-    public String  myMethod3(){
+    public String  handlePostMethod(){
         System.out.println("Post");
         return "Post";
     }
 
     @PutMapping
-    public String  myMethod4(){
+    public String  handlePutMethod(){
         System.out.println("Put");
         return "Put";
     }
