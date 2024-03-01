@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 3/1/2024
  */
 
-@Component
+//@Component
 //@Controller
 //@RestController
 public class SpringBean implements BeanNameAware, BeanFactoryAware, ApplicationContextAware, InitializingBean, DisposableBean {

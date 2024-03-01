@@ -1,5 +1,7 @@
 package lk.ijse.gdse66.HelloSpringWebMvc.bean;
 
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -9,9 +11,16 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
+@RequestMapping("/hello")
 public class Hello_webmvc {
 
-    public Hello_webmvc() {
+    /*public Hello_webmvc() {
         System.out.println("Hello webmvc()");
+    }
+*/
+    @GetMapping
+    public String  myMethod(){
+        System.out.println("MyMethod");
+        return "MyMethod";
     }
 }
