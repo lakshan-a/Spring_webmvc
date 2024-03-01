@@ -19,7 +19,7 @@ public class Hello_webmvc {
     @GetMapping
     public String  myMethod(){
         System.out.println("MyMethod");
-        return "MyMethod";
+        return "Get";
     }
 
     /*@GetMapping("/two")
@@ -31,19 +31,19 @@ public class Hello_webmvc {
     @DeleteMapping
     public String  myMethod2(){
         System.out.println("Delete");
-        return "MyMethod";
+        return "Delete";
     }
 
     @PostMapping
     public String  myMethod3(){
         System.out.println("Post");
-        return "MyMethod";
+        return "Post";
     }
 
     @PutMapping
     public String  myMethod4(){
         System.out.println("Put");
-        return "MyMethod";
+        return "Put";
     }
 
 
