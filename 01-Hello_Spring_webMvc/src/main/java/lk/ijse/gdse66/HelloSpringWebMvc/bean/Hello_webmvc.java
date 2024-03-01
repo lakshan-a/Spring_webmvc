@@ -16,17 +16,17 @@ public class Hello_webmvc {
         System.out.println("Hello webmvc()");
     }*/
 
-    @GetMapping
-    public String  myMethod(){
-        System.out.println("MyMethod");
-        return "Get";
-    }
-
     /*@GetMapping("/two")
     public String  myMethod2(){
         System.out.println("MyMethod");
         return "MyMethod2";
     }*/
+
+    @GetMapping
+    public String  myMethod(){
+        System.out.println("MyMethod");
+        return "Get";
+    }
 
     @DeleteMapping
     public String  myMethod2(){
