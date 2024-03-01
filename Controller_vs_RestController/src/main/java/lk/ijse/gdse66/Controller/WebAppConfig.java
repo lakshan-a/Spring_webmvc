@@ -25,6 +25,7 @@ public class WebAppConfig {
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        resolver.setPrefix("/WEB_INF/page");
         return resolver;
     }
 
