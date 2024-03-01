@@ -27,7 +27,8 @@ public class WebAppConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        WebMvcConfigurer.super.addResourceHandlers(registry);
+        registry.addResourceHandler("/WEB_INF/page/**")
+                .addResourceLocations("/WEB_INF/page");
     }
 
     @Bean
