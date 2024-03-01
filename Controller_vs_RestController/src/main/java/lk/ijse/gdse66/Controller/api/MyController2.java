@@ -22,4 +22,11 @@ public class MyController2 {
     public String getMethod(){
         return "MyController2";
     }
+
+    /*@GetMapping
+    public String getMethod(){
+        return "MyController2";
+    }*/
+
+
 }
