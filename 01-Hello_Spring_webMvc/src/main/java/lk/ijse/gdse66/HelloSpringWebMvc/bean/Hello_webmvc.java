@@ -1,9 +1,6 @@
 package lk.ijse.gdse66.HelloSpringWebMvc.bean;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @version: v0.0.1
@@ -33,7 +30,19 @@ public class Hello_webmvc {
 
     @DeleteMapping
     public String  myMethod2(){
-        System.out.println("MyMethod");
+        System.out.println("Delete");
+        return "MyMethod";
+    }
+
+    @PostMapping
+    public String  myMethod3(){
+        System.out.println("Post");
+        return "MyMethod";
+    }
+
+    @PutMapping
+    public String  myMethod4(){
+        System.out.println("Put");
         return "MyMethod";
     }
 
