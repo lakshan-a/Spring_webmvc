@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.Controller;
 
 import lk.ijse.gdse66.Controller.api.MyController1;
+import lk.ijse.gdse66.Controller.api.MyController2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -22,5 +23,10 @@ public class WebAppConfig {
     @Bean
     public MyController1 myController1(){
         return new MyController1();
+    }
+
+    @Bean
+    public MyController2 myController2(){
+        return new MyController2();
     }
 }
