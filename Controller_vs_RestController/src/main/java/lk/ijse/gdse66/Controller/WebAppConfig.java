@@ -5,7 +5,9 @@ import lk.ijse.gdse66.Controller.api.MyController2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 /**
  * @version: v0.0.1
@@ -18,6 +20,12 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class WebAppConfig {
     public WebAppConfig() {
         System.out.println("WebAppConfig() - constructor");
+    }
+
+    @Bean
+    public ViewResolver viewResolver(){
+        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+        return resolver;
     }
 
     @Bean
