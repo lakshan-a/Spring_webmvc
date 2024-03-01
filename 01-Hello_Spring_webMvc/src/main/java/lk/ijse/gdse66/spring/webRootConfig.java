@@ -12,6 +12,6 @@ import org.springframework.context.annotation.Configuration;
 public class webRootConfig {
 
     public webRootConfig() {
-        System.out.println("webRootConfig() - Constructor");
+
     }
 }
