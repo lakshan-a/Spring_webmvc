@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Hello_Spring_webMvc" />
+        <module name="01-Hello_Spring_webMvc" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Hello_Spring_webMvc" target="1.8" />
+      <module name="01-Hello_Spring_webMvc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

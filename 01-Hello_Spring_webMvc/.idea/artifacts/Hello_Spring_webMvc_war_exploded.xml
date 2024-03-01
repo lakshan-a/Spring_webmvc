@@ -11,7 +11,7 @@
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="Hello_Spring_webMvc" />
+          <element id="module-output" name="01-Hello_Spring_webMvc" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:4.0.1" />
@@ -29,7 +29,7 @@
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/target/Hello_Spring_webMvc-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
-      <element id="javaee-facet-resources" facet="Hello_Spring_webMvc/web/Web" />
+      <element id="javaee-facet-resources" facet="01-Hello_Spring_webMvc/web/Web" />
     </root>
   </artifact>
 </component>
