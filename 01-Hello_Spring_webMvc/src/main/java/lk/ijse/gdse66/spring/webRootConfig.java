@@ -10,4 +10,8 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class webRootConfig {
+
+    public webRootConfig() {
+        System.out.println("SpringBean() - Constructor");
+    }
 }

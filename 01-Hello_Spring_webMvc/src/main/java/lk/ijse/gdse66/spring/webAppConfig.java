@@ -15,4 +15,5 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @ComponentScan
 @EnableWebMvc
 public class webAppConfig {
+
 }
