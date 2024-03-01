@@ -27,14 +27,14 @@ public class WebAppConfig implements WebMvcConfigurer {
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        registry.addResourceHandler("/WEB_INF/page/**")
-                .addResourceLocations("/WEB_INF/page/");
+        registry.addResourceHandler("/WEB-INF/page/**")
+                .addResourceLocations("/WEB-INF/page/");
     }
 
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setPrefix("/WEB_INF/page/");
+        resolver.setPrefix("/WEB-INF/page/");
         resolver.setSuffix(".html");
         return resolver;
     }
