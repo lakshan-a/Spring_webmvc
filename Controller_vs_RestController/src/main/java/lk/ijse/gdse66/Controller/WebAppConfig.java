@@ -26,6 +26,7 @@ public class WebAppConfig {
     public ViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setPrefix("/WEB_INF/page");
+        resolver.setSuffix(".html");
         return resolver;
     }
 
