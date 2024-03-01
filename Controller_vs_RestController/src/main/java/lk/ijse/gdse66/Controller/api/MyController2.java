@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/two")
 public class MyController2 {
+
     public MyController2() {
         System.out.println("MyController2() - constructor");
     }
