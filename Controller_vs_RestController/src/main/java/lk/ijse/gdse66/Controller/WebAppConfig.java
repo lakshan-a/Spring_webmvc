@@ -1,5 +1,7 @@
 package lk.ijse.gdse66.Controller;
 
+import lk.ijse.gdse66.Controller.api.MyController1;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
@@ -15,5 +17,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 public class WebAppConfig {
     public WebAppConfig() {
         System.out.println("WebAppConfig() - constructor");
+    }
+
+    @Bean
+    public MyController1 myController1(){
+        return new MyController1();
     }
 }
