@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.HelloSpringWebMvc.bean;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,10 +25,16 @@ public class Hello_webmvc {
         return "MyMethod";
     }
 
-    @GetMapping("/two")
+    /*@GetMapping("/two")
     public String  myMethod2(){
         System.out.println("MyMethod");
         return "MyMethod2";
+    }*/
+
+    @DeleteMapping
+    public String  myMethod2(){
+        System.out.println("MyMethod");
+        return "MyMethod";
     }
 
 
