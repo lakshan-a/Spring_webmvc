@@ -8,6 +8,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration
 @ComponentScan(basePackages = "lk.ijse.gdse66.HelloSpringWebMvc.bean")
 @EnableWebMvc
+
 public class WebAppConfig {
 
 }
