@@ -5,5 +5,10 @@ package lk.ijse.gdse66.mapping.spec.dto;
  * @author: LakshanR
  * @date: 3/7/2024
  */
+
+
 public class SupplierDTO {
+    private String id;
+    private String name;
+    private int age;
 }
