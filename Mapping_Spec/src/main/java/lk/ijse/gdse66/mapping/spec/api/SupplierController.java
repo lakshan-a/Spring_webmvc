@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class SupplierController {
 
     @GetMapping
-    public String getMethodWithParam1(String id){
-        return String.format("getMethodWithParam1(String id): %s",id);
+    public String getMethod1(String id){
+        return String.format("getMethod1(String id): %s",id);
     }
 
     @GetMapping(params = "age")
