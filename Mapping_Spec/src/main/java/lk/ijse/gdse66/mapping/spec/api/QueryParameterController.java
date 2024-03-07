@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class QueryParameterController {
 
     @PostMapping
-    public String SaveCustomer(){
-        return ;
+    public String SaveCustomer(String id, String name, int age){
+        return String.format("SaveCustomer(String id, String name, int age) : s%,s%,s%",id,name,age);
     }
 }
