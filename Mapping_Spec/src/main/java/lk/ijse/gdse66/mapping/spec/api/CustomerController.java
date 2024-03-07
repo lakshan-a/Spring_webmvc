@@ -19,7 +19,8 @@ public class CustomerController {
         return "GetAllCustomer()";
     }
 
+    @GetMapping("/{city}")
     public String getAllCustomerByCity(){
-        return "Get Customer Controller()";
+        return "getAllCustomerByCity()";
     }
 }
