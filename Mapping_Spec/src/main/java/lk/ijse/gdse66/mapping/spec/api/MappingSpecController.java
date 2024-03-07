@@ -44,16 +44,22 @@ public class MappingSpecController {
 
     /* Wildcard Mapping */
 
-//    @GetMapping("ijse/gdse/*")
-//    @GetMapping("/ijse/*/gdse")
-    @GetMapping("/ijse/*/*/gdse")
+//    @GetMapping("/ijse/gdse/*")
+//    @GetMapping("/ijse/*/*/gdse")
     public String getMethod5(){
         return "GetMethod5()";
     }
 
-    @GetMapping("ijse/galle/*")
+    @GetMapping("/ijse/galle/*")
     public String getMethod6(){
         return "GetMethod6()";
     }
+
+    @GetMapping("/batch*")
+    public String getMethod7(){
+        return "GetMethod7()";
+    }
+
+
 
 }
