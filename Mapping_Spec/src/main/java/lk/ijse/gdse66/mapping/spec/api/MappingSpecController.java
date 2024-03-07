@@ -24,4 +24,9 @@ public class MappingSpecController {
         return "GetMethod2()";
     }
 
+    @GetMapping(path = "/ijse/gdse")
+    public String getMethod3(){
+        return "GetMethod3()";
+    }
+
 }
