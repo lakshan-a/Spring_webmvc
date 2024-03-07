@@ -19,7 +19,7 @@ public class MappingSpecController {
         return "GetMethod";
     }
 
-    @GetMapping
+    @GetMapping(path = "/ijse")
     public String getMethod2(){
         return "GetMethod2()";
     }
