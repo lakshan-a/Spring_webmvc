@@ -26,5 +26,11 @@ public class CustomerController {
 //        return "getAllCustomerByCity()";
     }
 
+    @GetMapping("/{city}")
+    public String getAllCustomerByCity(@PathVariable String city){
+        return String.format("getAllCustomerByCity(String city) :%s ",city);
+//        return "getAllCustomerByCity()";
+    }
+
 
 }
