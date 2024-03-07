@@ -34,7 +34,7 @@ public class QueryParameterController {
         return supplier.toString() ;
     }
 
-    @GetMapping(produces = "application/json")
+    @GetMapping
     public SupplierDTO getAllSuppliers(){
         return new SupplierDTO("S001","lakshan",21);
     }
