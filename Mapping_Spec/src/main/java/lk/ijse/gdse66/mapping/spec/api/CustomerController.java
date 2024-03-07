@@ -1,6 +1,9 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @version: v0.0.1
@@ -34,9 +37,6 @@ public class CustomerController {
     }
 */
 
-    @PostMapping
-    public String SaveCustomer(String id, String name, int age){
-        return  String.format("SaveCustomer(String id, String name, int age) :s%,s%,s%",id,name,age);
-    }
+
 
 }
