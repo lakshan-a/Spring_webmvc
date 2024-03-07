@@ -20,7 +20,8 @@ public class CustomerController {
     }
 
     @GetMapping("/{city}")
-    public String getAllCustomerByCity(){
-        return "getAllCustomerByCity()";
+    public String getAllCustomerByCity(String city){
+        return String.format("getAllCustomerByCity(String city) :%s ",city);
+//        return "getAllCustomerByCity()";
     }
 }
