@@ -17,7 +17,7 @@ import java.util.ArrayList;
 @RequestMapping("/query")
 public class QueryParameterController {
 
-    @/*PostMapping
+    /*@PostMapping
     public String SaveCustomer(String id, String name, int age){
         return  String.format("SaveCustomer(String id, String name, int age) :%s,%s,%s" ,id,name,age);
     }*/
