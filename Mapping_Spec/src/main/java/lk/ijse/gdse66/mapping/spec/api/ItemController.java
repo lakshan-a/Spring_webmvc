@@ -26,7 +26,7 @@ public class ItemController {
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public String SaveItemXml(){
-        return "String SaveItemJson(): I  accept only application/Xml";
+    public String SaveItemMultipartFormData(){
+        return "String SaveItemJson(): I  accept only application/MultipartFormData(";
     }
 }
