@@ -21,7 +21,7 @@ public class SupplierController {
     }*/
 
     @GetMapping
-    public String getMethod1(@RequestParam("CusId") String id){
+    public String getMethod1(@RequestParam(value = "CusId" ,required = false) String id){
         return String.format("getMethod1(String id): %s",id);
     }
 
