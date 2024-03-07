@@ -29,7 +29,7 @@ public class QueryParameterController {
     }*/
 
     @PostMapping
-    public String SaveSupplier(@ModelAttribute CustomerDTO customer){
+    public String SaveSupplier(@RequestBody CustomerDTO customer){
         return customer.toString() ;
     }
 
