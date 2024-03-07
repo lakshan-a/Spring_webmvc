@@ -25,7 +25,7 @@ public class QueryParameterController {
 
     @PostMapping
     public String SaveSupplier(String id,String name, String age){
-        return  String.format("SaveCustomer(String id, String name, int age) :%s,%s,%s" ,id,name,age);
+        return  String.format("SaveCustomer(String id, String name, String age) :%s,%s,%s" ,id,name,age);
     }
 
 }
