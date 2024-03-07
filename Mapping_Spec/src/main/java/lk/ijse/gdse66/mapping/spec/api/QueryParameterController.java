@@ -1,9 +1,7 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lk.ijse.gdse66.mapping.spec.dto.CustomerDTO;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @version: v0.0.1
@@ -20,5 +18,9 @@ public class QueryParameterController {
         return  String.format("SaveCustomer(String id, String name, int age) :%s,%s,%s" ,id,name,age);
     }*/
 
+    @PostMapping
+    public String SaveCustomer(@ModelAttribute CustomerDTO customer){
+        return customer.toString();
+    }
 
 }
