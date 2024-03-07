@@ -13,7 +13,7 @@ import java.lang.reflect.WildcardType;
  */
 
 @RestController
-@RequestMapping("/customer")
+@RequestMapping("/map")
 public class MappingSpecController {
 
     @GetMapping
