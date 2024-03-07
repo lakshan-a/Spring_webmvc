@@ -20,11 +20,11 @@ public class CustomerController {
         return "GetAllCustomer()";
     }
 
-    @GetMapping("/{city}")
-    public String getAllCustomerByCity(@PathVariable String city){
-        return String.format("getAllCustomerByCity(String city) :%s ",city);
-//        return "getAllCustomerByCity()";
-    }
+//    @GetMapping("/{city}")
+//    public String getAllCustomerByCity(@PathVariable String city){
+//        return String.format("getAllCustomerByCity(String city) :%s ",city);
+////        return "getAllCustomerByCity()";
+//    }
 
     @GetMapping("/{city}/{name}")
     public String getAllCustomerByCity(@PathVariable String city, @PathVariable("name") String CusName){
@@ -33,7 +33,7 @@ public class CustomerController {
     }
 
     @GetMapping("/{id:C\\d{3}}")
-    public String getCustomerById(String id){
+    public String getCustomerById(@PathVariable String id){
         return String.format("getCustomerById(): %s",id);
     }
 
