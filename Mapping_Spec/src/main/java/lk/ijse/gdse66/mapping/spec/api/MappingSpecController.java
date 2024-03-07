@@ -49,4 +49,9 @@ public class MappingSpecController {
         return "GetMethod5()";
     }
 
+    @GetMapping("ijse/galle/*")
+    public String getMethod6(){
+        return "GetMethod6()";
+    }
+
 }
