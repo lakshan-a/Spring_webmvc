@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -8,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
  * @date: 3/7/2024
  */
 
-@RestController("/map")
+@RestController
+@RequestMapping("/customer")
 public class MappingSpecController {
 
     public String getMethod(){
