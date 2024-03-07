@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/suppliers")
 public class SupplierController {
 
-    @GetMapping
+    /*@GetMapping
     public String getMethod1(@RequestParam(required = false) String id){
         return String.format("getMethod1(String id): %s",id);
-    }
+    }*/
 
     @GetMapping
     public String getMethod1(@RequestParam(value = "CusId" ,required = false) String id){
