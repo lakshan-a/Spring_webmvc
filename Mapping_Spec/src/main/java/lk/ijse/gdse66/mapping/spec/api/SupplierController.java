@@ -20,8 +20,8 @@ public class SupplierController {
     }
 
     @GetMapping
-    public String getMethodWithParam2(String id){
-        return String.format("getMethodWithParam2(String id): %s",id);
+    public String getMethodWithParam2(String name){
+        return String.format("getMethodWithParam2(String name): %s",name);
     }
 
 
