@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/item")
 public class ItemController {
+
+
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public String SaveItemJson(){
@@ -33,5 +36,11 @@ public class ItemController {
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String SaveItemUrl(){
         return "String SaveItemUrl(): I  accept only application/Url";
+    }
+
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public String GetItemAsJson(){
+        return "GetItemJson";
     }
 }
