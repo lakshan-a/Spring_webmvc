@@ -32,7 +32,9 @@ public class MappingSpecController {
         return "GetMethod3()";
     }
 
-    @GetMapping("/ijse/?gdse")
+    /*  Character Mapping  */
+
+    @GetMapping("/ijse/gdse?")
     public String getMethod4(){
         return "GetMethod4()";
     }
