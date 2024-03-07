@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.lang.reflect.WildcardType;
+
 /**
  * @version: v0.0.1
  * @author: LakshanR
@@ -34,10 +36,17 @@ public class MappingSpecController {
 
     /*  Character Mapping  */
 
-    @GetMapping("/ijse/gdse?")
+    @GetMapping("/ijse/gd?se")
+//    @GetMapping("/ijse/gdse?")
     public String getMethod4(){
         return "GetMethod4()";
     }
 
+    /* Wildcard Mapping */
+
+    @GetMapping("ijse/gdse/*")
+    public String getMethod5(){
+        return "GetMethod5()";
+    }
 
 }
