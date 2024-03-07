@@ -54,10 +54,10 @@ public class ItemController {
         return "GetItem()";
     }*/
 
-    @GetMapping(headers = {"produces = application/xml","consumes= application=Json"})
+   /* @GetMapping(headers = {"produces = application/xml","consumes= application=Json"})
     public String GetItem(){
         return "GetItem()";
-    }
+    }*/
 
 
 
