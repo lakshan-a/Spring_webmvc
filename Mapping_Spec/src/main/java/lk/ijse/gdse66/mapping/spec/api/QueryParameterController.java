@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
 import lk.ijse.gdse66.mapping.spec.dto.CustomerDTO;
+import lk.ijse.gdse66.mapping.spec.dto.SupplierDTO;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -29,10 +30,13 @@ public class QueryParameterController {
     }*/
 
     @PostMapping
-    public String SaveSupplier(@RequestBody CustomerDTO customer){
-        return customer.toString() ;
+    public String SaveSupplier(@RequestBody SupplierDTO supplier){
+        return supplier.toString() ;
     }
 
-    public CustomerDTO getSupplier
+    @GetMapping
+    public SupplierDTO getAllSuppliers(){
+        return new SupplierDTO("S001","lakshan",21);
+    }
 
 }
