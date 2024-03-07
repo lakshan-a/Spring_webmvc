@@ -1,9 +1,6 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @version: v0.0.1
@@ -15,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    @GetMapping
+    /*@GetMapping
     public String getAllCustomers(){
         return "GetAllCustomer()";
     }
@@ -35,6 +32,11 @@ public class CustomerController {
     public String getCustomerById(@PathVariable String id){
         return String.format("getCustomerById(): %s",id);
     }
+*/
 
+    @PostMapping
+    public String SaveCustomer(String id, String name, int age){
+        return String.format("SaveCustomer(String id, String name, int age) :%s,%s,s% ",id,name,age);
+    }
 
 }
