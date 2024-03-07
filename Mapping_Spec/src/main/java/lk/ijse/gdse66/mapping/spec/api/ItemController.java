@@ -42,5 +42,8 @@ public class ItemController {
         return "GetItemJson";
     }
 
-    public String GetItem
+    @GetMapping
+    public String GetItem(){
+        return "GetItem()";
+    }
 }
