@@ -4,6 +4,8 @@ import lk.ijse.gdse66.mapping.spec.dto.CustomerDTO;
 import lk.ijse.gdse66.mapping.spec.dto.SupplierDTO;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+
 /**
  * @version: v0.0.1
  * @author: LakshanR
@@ -37,6 +39,13 @@ public class QueryParameterController {
     @GetMapping
     public SupplierDTO getAllSuppliers(){
         return new SupplierDTO("S001","lakshan",21);
+    }
+
+    public ArrayList<SupplierDTO> getAllSupplierList(){
+        ArrayList<SupplierDTO> supplierList = new ArrayList<>();
+        supplierList.add(new SupplierDTO("S001","lakshan",21));
+        supplierList.add(new SupplierDTO("S002","Rashmika",21));
+        supplierList.add(new SupplierDTO("S003","Kalshan",24));
     }
 
 }
