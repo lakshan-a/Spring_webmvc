@@ -16,8 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/item")
 public class ItemController {
 
-
-
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public String SaveItemJson(){
         return "String SaveItemJson(): I  accept only application/Json";
@@ -39,7 +37,7 @@ public class ItemController {
     }
 
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping/*(produces = MediaType.APPLICATION_JSON_VALUE)*/
     public String GetItemAsJson(){
         return "GetItemJson";
     }
