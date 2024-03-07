@@ -1,5 +1,7 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -12,4 +14,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/item")
 public class ItemController {
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String SaveItemJson(){
+        return "String SaveItemJson(): I  accept only application/Json";
+    }
 }
