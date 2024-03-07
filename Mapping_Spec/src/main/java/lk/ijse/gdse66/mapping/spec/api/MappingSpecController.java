@@ -36,16 +36,17 @@ public class MappingSpecController {
 
     /*  Character Mapping  */
 
-//    @GetMapping("/ijse/gd?se")
+    @GetMapping("/ijse/gd?se")
 //    @GetMapping("/ijse/gdse?")
-@GetMapping("/ijse/*/*/gdse")
     public String getMethod4(){
         return "GetMethod4()";
     }
 
     /* Wildcard Mapping */
 
-    @GetMapping("ijse/gdse/*")
+//    @GetMapping("ijse/gdse/*")
+//    @GetMapping("/ijse/*/gdse")
+    @GetMapping("/ijse/*/*/gdse")
     public String getMethod5(){
         return "GetMethod5()";
     }
