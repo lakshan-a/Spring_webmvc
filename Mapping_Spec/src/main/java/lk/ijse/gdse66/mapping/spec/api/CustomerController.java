@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/customer")
 public class CustomerController {
 
-    /*@GetMapping
+    @GetMapping
     public String getAllCustomers(){
         return "GetAllCustomer()";
     }
@@ -35,8 +35,6 @@ public class CustomerController {
     public String getCustomerById(@PathVariable String id){
         return String.format("getCustomerById(): %s",id);
     }
-*/
-
 
 
 }
