@@ -23,4 +23,8 @@ public class QueryParameterController {
         return customer.toString();
     }
 
+    public String SaveSupplier(String id,String name, int age){
+        return  String.format("SaveCustomer(String id, String name, int age) :%s,%s,%s" ,id,name,age);
+    }
+
 }
