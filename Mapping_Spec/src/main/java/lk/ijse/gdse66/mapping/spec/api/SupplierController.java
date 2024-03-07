@@ -18,4 +18,11 @@ public class SupplierController {
     public String getMethod(String id){
         return String.format("getMethod(String id): %s",id);
     }
+
+    @GetMapping
+    public String getMethod(String id){
+        return String.format("getMethod(String id): %s",id);
+    }
+
+
 }
