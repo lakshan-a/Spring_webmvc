@@ -33,8 +33,8 @@ public class QueryParameterController {
     }*/
 
     @PostMapping
-    public String SaveSupplier(@RequestBody SupplierDTO supplier){
-        return supplier.toString() ;
+    public SupplierDTO SaveSupplier(@RequestBody SupplierDTO supplier){
+        return supplier;
     }
 
     /*@GetMapping
