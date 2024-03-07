@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class SupplierController {
 
     @GetMapping
-    public String getMethod(){
-        return "getMethod()";
+    public String getMethod(String id){
+        return String.format("getMethod(String id): %s",id);
     }
 }
