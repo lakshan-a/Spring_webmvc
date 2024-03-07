@@ -32,7 +32,7 @@ public class CustomerController {
 //        return "getAllCustomerByCity()";
     }
 
-    @GetMapping("/id:\\d{3}")
+    @GetMapping("/id:C\\d{3}")
     public String getCustomerById(String id){
         return String.format("getCustomerById(): %s",id);
     }
