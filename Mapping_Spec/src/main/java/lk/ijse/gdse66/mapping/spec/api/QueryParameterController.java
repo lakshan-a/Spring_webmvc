@@ -19,7 +19,7 @@ public class QueryParameterController {
     }*/
 
     @PostMapping
-    public String SaveCustomer( CustomerDTO customer){
+    public String SaveCustomer(@ModelAttribute CustomerDTO customer){
         return customer.toString();
     }
 
