@@ -18,11 +18,12 @@ public class QueryParameterController {
         return  String.format("SaveCustomer(String id, String name, int age) :%s,%s,%s" ,id,name,age);
     }*/
 
-    @PostMapping
+   /* @PostMapping
     public String SaveCustomer(@ModelAttribute CustomerDTO customer){
         return customer.toString();
-    }
+    }*/
 
+    @PostMapping
     public String SaveSupplier(String id,String name, int age){
         return  String.format("SaveCustomer(String id, String name, int age) :%s,%s,%s" ,id,name,age);
     }
