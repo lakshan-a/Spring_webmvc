@@ -37,7 +37,7 @@ public class ItemController {
     }
 
 
-    @GetMapping/*(produces = MediaType.APPLICATION_JSON_VALUE)*/
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public String GetItemAsJson(){
         return "GetItemJson";
     }
