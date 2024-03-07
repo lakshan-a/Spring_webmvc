@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,7 +14,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/customer")
 public class MappingSpecController {
 
+    @GetMapping
     public String getMethod(){
-        return "getMethod";
+        return "GetMethod";
     }
+
+    @GetMapping
+    public String getMethod2(){
+        return "GetMethod2()";
+    }
+
 }
