@@ -30,7 +30,7 @@ public class ItemController {
         return "String SaveItemJson(): I  accept only Multipart/form-Data(";
     }
 
-    @PostMapping(consumes = MediaType.M)
+    @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String SaveItemUrl(){
         return "String SaveItemJson(): I  accept only application/Url(";
     }
