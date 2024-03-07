@@ -30,7 +30,7 @@ public class QueryParameterController {
 
     @PostMapping
     public String SaveSupplier(@ModelAttribute CustomerDTO customer){
-        return  ;
+        return customer.toString() ;
     }
 
 }
