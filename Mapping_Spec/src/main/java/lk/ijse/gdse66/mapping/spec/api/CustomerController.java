@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,8 +21,10 @@ public class CustomerController {
     }
 
     @GetMapping("/{city}")
-    public String getAllCustomerByCity(String city){
+    public String getAllCustomerByCity(@PathVariable String city){
         return String.format("getAllCustomerByCity(String city) :%s ",city);
 //        return "getAllCustomerByCity()";
     }
+
+
 }
