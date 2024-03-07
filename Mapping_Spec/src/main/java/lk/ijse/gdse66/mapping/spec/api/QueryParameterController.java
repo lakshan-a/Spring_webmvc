@@ -2,6 +2,7 @@ package lk.ijse.gdse66.mapping.spec.api;
 
 import lk.ijse.gdse66.mapping.spec.dto.CustomerDTO;
 import lk.ijse.gdse66.mapping.spec.dto.SupplierDTO;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -41,11 +42,13 @@ public class QueryParameterController {
         return new SupplierDTO("S001","lakshan",21);
     }
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<SupplierDTO> getAllSupplierList(){
         ArrayList<SupplierDTO> supplierList = new ArrayList<>();
         supplierList.add(new SupplierDTO("S001","lakshan",21));
         supplierList.add(new SupplierDTO("S002","Rashmika",21));
         supplierList.add(new SupplierDTO("S003","Kalshan",24));
+        return supplierList;
     }
 
 }
