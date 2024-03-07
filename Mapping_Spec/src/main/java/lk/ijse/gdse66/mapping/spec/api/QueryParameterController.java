@@ -33,4 +33,6 @@ public class QueryParameterController {
         return customer.toString() ;
     }
 
+    public CustomerDTO getSupplier
+
 }
