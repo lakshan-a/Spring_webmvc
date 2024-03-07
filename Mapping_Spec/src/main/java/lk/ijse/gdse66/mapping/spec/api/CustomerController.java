@@ -32,8 +32,8 @@ public class CustomerController {
 //        return "getAllCustomerByCity()";
     }
 
-    @GetMapping("/id:C\\d{3}")
-    public String getCustomerById(@PathVariable String id){
+    @GetMapping("/{id:C\\d{3}}")
+    public String getCustomerById(String id){
         return String.format("getCustomerById(): %s",id);
     }
 
