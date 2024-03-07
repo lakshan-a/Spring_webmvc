@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 public class SupplierController {
 
     @GetMapping
-    public String getMethod(String id){
-        return String.format("getMethod(String id): %s",id);
+    public String getMethodWithParam1(String id){
+        return String.format("getMethodWithParam1(String id): %s",id);
     }
 
     @GetMapping
-    public String getMethod(String id){
-        return String.format("getMethod(String id): %s",id);
+    public String getMethodWithParam2(String id){
+        return String.format("getMethodWithParam2(String id): %s",id);
     }
 
 
