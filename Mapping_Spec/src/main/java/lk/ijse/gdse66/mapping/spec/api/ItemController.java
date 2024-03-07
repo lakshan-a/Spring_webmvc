@@ -19,4 +19,9 @@ public class ItemController {
     public String SaveItemJson(){
         return "String SaveItemJson(): I  accept only application/Json";
     }
+
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String SaveItemJson(){
+        return "String SaveItemJson(): I  accept only application/Json";
+    }
 }
