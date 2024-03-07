@@ -36,8 +36,9 @@ public class MappingSpecController {
 
     /*  Character Mapping  */
 
-    @GetMapping("/ijse/gd?se")
+//    @GetMapping("/ijse/gd?se")
 //    @GetMapping("/ijse/gdse?")
+@GetMapping("/ijse/*/*/gdse")
     public String getMethod4(){
         return "GetMethod4()";
     }
