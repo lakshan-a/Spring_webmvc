@@ -22,16 +22,16 @@ public class ItemController {
 
     @PostMapping(consumes = MediaType.APPLICATION_XML_VALUE)
     public String SaveItemXml(){
-        return "String SaveItemJson(): I  accept only application/Xml";
+        return "String SaveItemXml(): I  accept only application/Xml";
     }
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public String SaveItemMultipartFormData(){
-        return "String SaveItemJson(): I  accept only Multipart/form-Data";
+        return "String SaveItemMultipartFormData(): I  accept only Multipart/form-Data";
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     public String SaveItemUrl(){
-        return "String SaveItemJson(): I  accept only application/Url";
+        return "String SaveItemUrl(): I  accept only application/Url";
     }
 }
