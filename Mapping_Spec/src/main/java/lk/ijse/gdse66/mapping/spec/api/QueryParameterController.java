@@ -37,10 +37,10 @@ public class QueryParameterController {
         return supplier.toString() ;
     }
 
-    @GetMapping
+    /*@GetMapping
     public SupplierDTO getAllSuppliers(){
         return new SupplierDTO("S001","lakshan",21);
-    }
+    }*/
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ArrayList<SupplierDTO> getAllSupplierList(){
