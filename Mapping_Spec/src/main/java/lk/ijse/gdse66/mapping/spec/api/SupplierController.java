@@ -2,6 +2,7 @@ package lk.ijse.gdse66.mapping.spec.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -20,7 +21,7 @@ public class SupplierController {
     }
 
     @GetMapping
-    public String getMethodWithParam2(int age){
+    public String getMethodWithParam2(@RequestParam int age){
         return String.format("getMethodWithParam2(String name): %s",age);
     }
 
