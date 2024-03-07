@@ -26,8 +26,8 @@ public class SupplierController {
     }
 
     @GetMapping(params = {"id","name","age"})
-    public String getMethodWithParam3(String CusId,String name, int age){
-        return String.format("getMethodWithParam3(String id,String name, int age): %s,%s,%s",CusId,name,age);
+    public String getMethod3(String CusId,String name, int age){
+        return String.format("getMethod3(String id,String name, int age): %s,%s,%s",CusId,name,age);
     }
 
 
