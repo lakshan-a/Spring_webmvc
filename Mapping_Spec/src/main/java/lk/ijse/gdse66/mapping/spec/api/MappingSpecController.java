@@ -60,6 +60,12 @@ public class MappingSpecController {
         return "GetMethod7()";
     }
 
+    /* Exception Mapping */
+
+    @GetMapping("/.php*")
+    public String getMethod8(){
+        return "GetMethod8()";
+    }
 
 
 }
