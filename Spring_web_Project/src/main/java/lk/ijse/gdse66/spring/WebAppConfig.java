@@ -13,7 +13,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "lk.ijse.gdse66.mapping.spec.api")
+@ComponentScan
 public class WebAppConfig implements WebMvcConfigurer {
 
     public WebAppConfig() {
