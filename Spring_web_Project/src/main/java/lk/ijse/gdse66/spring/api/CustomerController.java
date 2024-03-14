@@ -1,9 +1,12 @@
 package lk.ijse.gdse66.spring.api;
 
+import lk.ijse.gdse66.spring.dto.CustomerDTO;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.ArrayList;
 
 /**
  * @version: v0.0.1
@@ -18,6 +21,10 @@ public class CustomerController {
 
     @GetMapping
     public String GetAllCustomer(){
+        ArrayList<CustomerDTO>customerList =new ArrayList<>();
+        customerList.add(new CustomerDTO("C001","lakshan","matara"));
+        customerList.add(new CustomerDTO("C002","Rashmika","galle"));
+        customerList.add(new CustomerDTO("C003","lahiru","matara"));
         return "GetAllCustomer()";
     }
 }
