@@ -27,6 +27,9 @@ public class CustomerController {
         return customerList;
     }
 
-    public void saveCustomer(){}
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void saveCustomer(@RequestBody CustomerDTO customer){
+        System.out.println(customer);
+    }
 
 }
