@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="Spring_web_Project-1.0-SNAPSHOT.war">
+    <root id="archive" name="SM2-Controller-Vs-RestController-1.0-0.war">
       <element id="artifact" artifact-name="Spring_web_Project:war exploded" />
     </root>
   </artifact>
