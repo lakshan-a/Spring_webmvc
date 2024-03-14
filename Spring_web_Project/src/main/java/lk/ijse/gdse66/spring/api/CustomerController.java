@@ -33,6 +33,8 @@ public class CustomerController {
     }
 
     @DeleteMapping("/{id}")
-    public void deleteCustomer(@PathVariable("id") String id){}
+    public void deleteCustomer(@PathVariable("id") String id){
+        System.out.println(id);
+    }
 
 }
