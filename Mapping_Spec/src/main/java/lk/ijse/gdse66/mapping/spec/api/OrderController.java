@@ -15,8 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/order")
 public class OrderController {
 
+    /*@GetMapping
+    public String getOrder(@RequestHeader ("x-token") String token){
+        return String.format("grtAllOrder(token=%s)",token);
+    }*/
+
     @GetMapping
-    public String getOrder(@RequestHeader String token){
+    public String getOrder(@RequestHeader (value = "x-token",required = false) String token){
         return String.format("grtAllOrder(token=%s)",token);
     }
 }
