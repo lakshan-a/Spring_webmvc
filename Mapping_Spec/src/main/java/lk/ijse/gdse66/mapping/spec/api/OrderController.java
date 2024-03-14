@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.mapping.spec.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
     @GetMapping
-    public String getOrder(String token){
-        return String.format("grtAllOrder(token=%s",token);
+    public String getOrder(@RequestHeader String token){
+        return String.format("grtAllOrder(token=%s)",token);
     }
 }
