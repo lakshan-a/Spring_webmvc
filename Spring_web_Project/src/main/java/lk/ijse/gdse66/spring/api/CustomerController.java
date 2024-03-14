@@ -37,9 +37,10 @@ public class CustomerController {
         System.out.println(id);
     }
 
-    @PatchMapping("/{id}")
-    public void updateCustomer(@PathVariable("id") String id){
+    @PatchMapping(value = "/{id}" ,consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updateCustomer(@PathVariable("id") String id ,@RequestBody CustomerDTO customer){
         System.out.println(id);
+        System.out.println(customer);
     }
 
 }
