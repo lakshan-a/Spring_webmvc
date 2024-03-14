@@ -60,8 +60,8 @@ public class ItemController {
     }*/
 
     @GetMapping(headers = {"content-type = application/json","accept=application/xml"})
-    public String GetAallItemXml(){
-        return "GetAallItemXml()";
+    public String GetAllItemXml(){
+        return "GetAllItemXml()";
     }
 
 
