@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"lk.ijse.gdse66.mapping.spec"},{"l":"lk.ijse.gdse66.mapping.spec.api"},{"l":"lk.ijse.gdse66.mapping.spec.dto"}]
