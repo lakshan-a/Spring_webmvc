@@ -37,4 +37,9 @@ public class CustomerController {
         System.out.println(id);
     }
 
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public void updatedCustomer(@RequestBody String id){
+        System.out.println(id);
+    }
+
 }
