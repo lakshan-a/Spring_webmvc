@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderController {
 
     @GetMapping
-    public String getOrder(){
-        return "getOrder()";
+    public String getOrder(String token){
+        return String.format("grtAllOrder(token=%s",token);
     }
 }
