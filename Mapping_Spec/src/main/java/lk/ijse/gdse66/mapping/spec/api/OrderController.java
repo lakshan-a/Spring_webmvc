@@ -20,8 +20,13 @@ public class OrderController {
         return String.format("grtAllOrder(token=%s)",token);
     }*/
 
-    @GetMapping
+    /*@GetMapping
     public String getOrder(@RequestHeader (value = "x-token",required = false) String token){
+        return String.format("grtAllOrder(token=%s)",token);
+    }*/
+
+    @GetMapping("x-token")
+    public String getOrder(@RequestHeader  String token){
         return String.format("grtAllOrder(token=%s)",token);
     }
 }
