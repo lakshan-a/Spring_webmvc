@@ -28,4 +28,5 @@ public class CustomerController {
         customerList.add(new CustomerDTO("C003","lahiru","matara"));
         return customerList;
     }
+
 }
