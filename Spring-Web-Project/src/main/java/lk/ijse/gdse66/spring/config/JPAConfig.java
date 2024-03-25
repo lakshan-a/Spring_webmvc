@@ -63,6 +63,7 @@ public class JPAConfig {
         return txManager;
     }
 
+    @Bean
     public ModelMapper modelMapper(){
         return modelMapper();
     }
