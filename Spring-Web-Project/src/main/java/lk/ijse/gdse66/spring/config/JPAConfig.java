@@ -2,6 +2,7 @@ package lk.ijse.gdse66.spring.config;
 
 import jakarta.persistence.EntityManagerFactory;
 import lombok.val;
+import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -60,5 +61,9 @@ public class JPAConfig {
         JpaTransactionManager txManager = new JpaTransactionManager();
         txManager.setEntityManagerFactory(entityManagerFactory);
         return txManager;
+    }
+
+    public ModelMapper modelMapper(){
+        return modelMapper();
     }
 }
