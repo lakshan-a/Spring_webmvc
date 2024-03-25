@@ -6,4 +6,8 @@ package lk.ijse.gdse66.spring.entity;
  * @date: 3/25/2024
  */
 public class Customer {
+
+    private String id;
+    private String name;
+    private String address;
 }
