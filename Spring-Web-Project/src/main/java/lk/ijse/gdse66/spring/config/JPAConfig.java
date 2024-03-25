@@ -26,7 +26,9 @@ public class JPAConfig {
     public DataSource dataSource() {
         DriverManagerDataSource dmds = new DriverManagerDataSource();
         dmds.setUrl("jdbc:mysql://localhost:3303/gdse66_spring_web?createDatabaseIfNotExist=true");
-        dmds.setUsername();
+        dmds.setUsername("root");
+        dmds.setPassword("12345");
+        dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         return dmds;
     }
 
