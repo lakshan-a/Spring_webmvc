@@ -23,9 +23,9 @@ import javax.sql.DataSource;
  * @date: 3/25/2024
  */
 
-//@Configuration
-@EnableJpaRepositories(basePackages = "lk.ijse.gdse66.spring.repositories")
+@Configuration
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackages = "lk.ijse.gdse66.spring.repositories")
 public class JPAConfig {
 
     @Bean
