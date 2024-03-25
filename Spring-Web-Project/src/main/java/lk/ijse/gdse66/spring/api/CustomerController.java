@@ -37,21 +37,20 @@ public class CustomerController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     public void saveCustomer(@RequestBody CustomerDto customer){
-        System.out.println(customer);
+        customerService.saveCustomer(customer);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCustomer(@PathVariable("id") String id){
-        System.out.println(id);
+        customerService.deleteCustomer(id);
 
     }
 
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCustomer(@PathVariable("id") String id,@RequestBody CustomerDto customer){
-        /*System.out.println(id);
-        System.out.println(customer);*/
+        customerService.updateCustomer(customer);
 
 
 
@@ -60,6 +59,6 @@ public class CustomerController {
     @GetMapping("/{id}")
     public CustomerDto getCustomerDetails(@PathVariable("id") String id){
 
-        return new CustomerDto(id,"Navi","colomba");
+        return customerService.getCustomerDetail(id);
     }
 }
