@@ -50,6 +50,10 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void deleteCustomer(String id) {
+        for (CustomerDto customer : customerList){
+            if (customer.getId().equals(id))
+                customerList.remove(customer);
+        }
 
     }
 }
