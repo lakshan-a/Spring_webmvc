@@ -1,7 +1,9 @@
 package lk.ijse.gdse66.spring.config;
 
 import jakarta.persistence.EntityManagerFactory;
+import lombok.val;
 import org.springframework.context.annotation.Bean;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseBuilder;
 import org.springframework.jdbc.datasource.embedded.EmbeddedDatabaseType;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -22,9 +24,7 @@ public class JPAConfig {
 
     @Bean
     public DataSource dataSource() {
-
-        EmbeddedDatabaseBuilder builder = new EmbeddedDatabaseBuilder();
-        return builder.setType(EmbeddedDatabaseType.HSQL).build();
+        DriverManagerDataSource dmds = new DriverManagerDataSource();
     }
 
     @Bean
