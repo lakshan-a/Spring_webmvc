@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
  * @date: 3/25/2024
  */
 
-@Component
 public class Transformer {
 
     @Autowired
