@@ -24,7 +24,7 @@ import javax.sql.DataSource;
  */
 
 //@Configuration
-@EnableJpaRepositories(basePackages = "")
+@EnableJpaRepositories(basePackages = "lk.ijse.gdse66.spring.repositories")
 @EnableTransactionManagement
 public class JPAConfig {
 
