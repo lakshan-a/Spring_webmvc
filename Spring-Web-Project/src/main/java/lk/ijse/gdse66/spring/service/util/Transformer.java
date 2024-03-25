@@ -22,4 +22,9 @@ public class Transformer {
         CustomerDto customerDto = mapper.map(customer, CustomerDto.class);
         return customerDto;
     }
+
+    public Customer fromCustomerEntity(CustomerDto customerDto){
+        Customer customer = mapper.map(customerDto, Customer.class);
+        return customer;
+    }
 }
