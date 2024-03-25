@@ -96,7 +96,7 @@ $('#btnUpdate').click(function () {
     const jsonObj = JSON.stringify(customerObj);
 
     $.ajax({
-        url: "http://localhost:8080/app/api/v1/customer" + id,
+        url: "http://localhost:8080/app/api/v1/customer/" + id,
         method: "PATCH",
         data: jsonObj,
         contentType: "application/json",
