@@ -25,6 +25,7 @@ public class JPAConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dmds = new DriverManagerDataSource();
+        return dmds;
     }
 
     @Bean
