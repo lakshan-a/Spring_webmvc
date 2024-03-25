@@ -3,6 +3,7 @@ package lk.ijse.gdse66.spring.service;
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.entity.Customer;
 import lk.ijse.gdse66.spring.repositories.CustomerRepo;
+import lk.ijse.gdse66.spring.service.util.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +24,8 @@ public class CustomerServiceImpl implements CustomerService{
 
     ArrayList<CustomerDto> customerList = new ArrayList<>();
 
+    @Autowired
+    Transformer transformer;
 
 
     @Override
