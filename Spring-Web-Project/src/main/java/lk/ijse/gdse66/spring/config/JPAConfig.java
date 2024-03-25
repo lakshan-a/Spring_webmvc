@@ -18,7 +18,7 @@ import javax.sql.DataSource;
  */
 
 
-public class JPACofig {
+public class JPAConfig {
 
     @Bean
     public DataSource dataSource() {
