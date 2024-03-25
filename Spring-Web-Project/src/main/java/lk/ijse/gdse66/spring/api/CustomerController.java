@@ -19,19 +19,19 @@ public class CustomerController {
     CustomerService customerService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    /*public ArrayList<CustomerDto> getAllCustomers(){
-
-        ArrayList<CustomerDto> customerList = new ArrayList<>();
-        customerList.add(new CustomerDto("C001","Navishka","Matara"));
-        customerList.add(new CustomerDto("C002","lakshan","Galle"));
-        customerList.add(new CustomerDto("C003","Savinda","Thangalla"));
-
-        return customerList;
-
-    }*/
+//    public ArrayList<CustomerDto> getAllCustomers(){
+//
+//        ArrayList<CustomerDto> customerList = new ArrayList<>();
+//        customerList.add(new CustomerDto("C001","Navishka","Matara"));
+//        customerList.add(new CustomerDto("C002","lakshan","Galle"));
+//        customerList.add(new CustomerDto("C003","Savinda","Thangalla"));
+//
+//        return customerList;
+//
+//    }
 
     public List<CustomerDto>getAllCustomer(){
-        return c
+        return customerService.getAllCustomer();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
