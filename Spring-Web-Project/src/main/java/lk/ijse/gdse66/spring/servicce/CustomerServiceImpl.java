@@ -30,7 +30,10 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerDto getCustomerDetail(String id) {
-        return null;
+        for (CustomerDto customer : customerList){
+            if (customer.getId().equals(id))
+                return null;
+        }
     }
 
     @Override
