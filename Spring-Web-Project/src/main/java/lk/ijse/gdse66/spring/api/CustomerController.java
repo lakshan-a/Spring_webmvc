@@ -1,20 +1,25 @@
 package lk.ijse.gdse66.spring.api;
 
 import lk.ijse.gdse66.spring.dto.CustomerDto;
+import lk.ijse.gdse66.spring.service.CustomerService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/api/v1/customer")
 public class CustomerController {
 
+    @Autowired
+    CustomerService customerService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ArrayList<CustomerDto> getAllCustomers(){
+    /*public ArrayList<CustomerDto> getAllCustomers(){
 
         ArrayList<CustomerDto> customerList = new ArrayList<>();
         customerList.add(new CustomerDto("C001","Navishka","Matara"));
@@ -23,6 +28,10 @@ public class CustomerController {
 
         return customerList;
 
+    }*/
+
+    public List<CustomerDto>getAllCustomer(){
+        return c
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -41,8 +50,10 @@ public class CustomerController {
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCustomer(@PathVariable("id") String id,@RequestBody CustomerDto customer){
-        System.out.println(id);
-        System.out.println(customer);
+        /*System.out.println(id);
+        System.out.println(customer);*/
+
+
 
     }
 
