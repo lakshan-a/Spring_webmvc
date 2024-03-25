@@ -30,8 +30,15 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<CustomerDto> getAllCustomer() {
+        List<CustomerDto> list = new ArrayList<>();
         List<Customer> customerList1=customerRepo.findAll();
-        return customerList;
+        for (Customer customer:customerList1){
+            list.add(new CustomerDto(
+                    customer.getId(),
+                    customer.getName(),
+                    customer.getAddress()
+            ));
+        }
     }
 
     @Override
@@ -45,8 +52,9 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void saveCustomer(CustomerDto customerDto) {
-        Customer customer =new Customer(customerDto.getId(),customerDto.getName(),customerDto.getAddress());
+        Customer customer = transformer.toCustomerEntity(customerDto);
         customerRepo.save(customer);
+
     }
 
     @Override
