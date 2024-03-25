@@ -16,7 +16,7 @@ public interface CustomerService {
 
     void saveCustomer (CustomerDto customerDto);
 
-    void updateCustomer (CustomerDto customerDto);
+    boolean updateCustomer (CustomerDto customerDto);
 
     void deleteCustomer (String id);
 }

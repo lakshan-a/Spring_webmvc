@@ -44,7 +44,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public void updateCustomer(CustomerDto customerDto) {
+    public boolean updateCustomer(CustomerDto customerDto) {
         for (CustomerDto customer : customerList) {
             if (customer.getId().equals(customerDto.getId())){
                 customer.setName(customerDto.getName());
