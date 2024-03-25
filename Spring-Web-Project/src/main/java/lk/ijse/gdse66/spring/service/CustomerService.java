@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.spring.servicce;
+package lk.ijse.gdse66.spring.service;
 
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 
