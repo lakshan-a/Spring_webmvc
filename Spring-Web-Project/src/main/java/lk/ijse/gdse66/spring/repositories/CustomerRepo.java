@@ -5,5 +5,5 @@ package lk.ijse.gdse66.spring.repositories;
  * @author: LakshanR
  * @date: 3/25/2024
  */
-public class CustomerRepo {
+public interface CustomerRepo {
 }
