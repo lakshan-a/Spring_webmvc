@@ -46,7 +46,7 @@ public class JPAConfig {
         vendorAdapter.setGenerateDdl(true);
         vendorAdapter.setShowSql(true);
         vendorAdapter.setDatabase(Database.MYSQL);
-        vendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL5Dialect");
+        vendorAdapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
