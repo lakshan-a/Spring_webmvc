@@ -22,9 +22,9 @@ import javax.sql.DataSource;
  * @date: 3/25/2024
  */
 
-@Configuration
-@EnableJpaRepositories
-@EnableTransactionManagement
+//@Configuration
+//@EnableJpaRepositories
+//@EnableTransactionManagement
 
 public class JPAConfig {
 
@@ -46,7 +46,7 @@ public class JPAConfig {
 
         LocalContainerEntityManagerFactoryBean factory = new LocalContainerEntityManagerFactoryBean();
         factory.setJpaVendorAdapter(vendorAdapter);
-        factory.setPackagesToScan("com.acme.domain");
+        factory.setPackagesToScan("lk.ijse.gdse66.spring.entity");
         factory.setDataSource(dataSource());
         return factory;
     }
