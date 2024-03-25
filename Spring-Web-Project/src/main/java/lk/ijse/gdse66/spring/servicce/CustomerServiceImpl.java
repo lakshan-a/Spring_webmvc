@@ -45,7 +45,14 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void updateCustomer(CustomerDto customerDto) {
-
+        for (CustomerDto customer : customerList) {
+            if (customer.getId().equals(customerDto.getId())){
+                customer.setName(customerDto.getName());
+                customer.setAddress(customerDto.getAddress());
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override
