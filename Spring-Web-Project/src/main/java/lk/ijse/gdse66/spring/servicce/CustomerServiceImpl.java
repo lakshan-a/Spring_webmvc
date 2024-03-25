@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.spring.servicce;
 
 import lk.ijse.gdse66.spring.dto.CustomerDto;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,6 +12,7 @@ import java.util.List;
  * @date: 3/25/2024
  */
 
+@Service
 public class CustomerServiceImpl implements CustomerService{
 
     ArrayList<CustomerDto> customerList = new ArrayList<>();
@@ -22,7 +24,6 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
 
-
     @Override
     public List<CustomerDto> getAllCustomer() {
         return customerList;
@@ -32,8 +33,9 @@ public class CustomerServiceImpl implements CustomerService{
     public CustomerDto getCustomerDetail(String id) {
         for (CustomerDto customer : customerList){
             if (customer.getId().equals(id))
-                return null;
+                return customer;
         }
+        return null;
     }
 
     @Override
