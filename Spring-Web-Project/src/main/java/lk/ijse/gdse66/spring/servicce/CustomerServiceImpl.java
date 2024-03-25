@@ -25,16 +25,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public List<CustomerDto> getAllCustomer() {
-//        for (CustomerDto customerDto:customerList){
-//
-//            customer.add("id",customerDTO.getCusId());
-//            customer.add("name",customerDTO.getCusName());
-//            customer.add("address",customerDTO.getCusAddress());
-//            customer.add("salary",customerDTO.getCusSalary());
-//
-//            allCustomers.add(customer.build());
-//        }
-
+        return customerList;
     }
 
     @Override
