@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.spring;
+package lk.ijse.gdse66.spring.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
