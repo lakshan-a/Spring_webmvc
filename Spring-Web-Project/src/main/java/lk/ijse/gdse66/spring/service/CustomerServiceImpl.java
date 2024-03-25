@@ -44,11 +44,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public CustomerDto getCustomerDetail(String id) {
-        for (CustomerDto customer : customerList){
-            if (customer.getId().equals(id))
-                return customer;
-        }
-        return null;
+       return transformer.fromCustomerEntity(customerRepo.getReferenceById(id));
     }
 
     @Override
@@ -73,6 +69,5 @@ public class CustomerServiceImpl implements CustomerService{
     @Override
     public void deleteCustomer(String id) {
         customerRepo.deleteById(id);
-
     }
 }
