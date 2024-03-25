@@ -24,9 +24,8 @@ import javax.sql.DataSource;
  */
 
 //@Configuration
-//@EnableJpaRepositories
-//@EnableTransactionManagement
-
+@EnableJpaRepositories
+@EnableTransactionManagement
 public class JPAConfig {
 
     @Bean
