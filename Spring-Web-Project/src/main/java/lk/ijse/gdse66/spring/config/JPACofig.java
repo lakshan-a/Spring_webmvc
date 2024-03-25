@@ -16,6 +16,8 @@ import javax.sql.DataSource;
  * @author: LakshanR
  * @date: 3/25/2024
  */
+
+
 public class JPACofig {
 
     @Bean
