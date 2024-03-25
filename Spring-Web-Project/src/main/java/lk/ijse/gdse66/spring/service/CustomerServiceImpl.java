@@ -25,7 +25,6 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 
-
     @Override
     public List<CustomerDto> getAllCustomer() {
         List<Customer> customerList=customerRepo.findAll();
@@ -43,7 +42,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void saveCustomer(CustomerDto customerDto) {
-        customerList.add(customerDto);
+        customerRepo.save()
     }
 
     @Override
