@@ -39,6 +39,7 @@ public class CustomerServiceImpl implements CustomerService{
                     customer.getAddress()
             ));
         }
+        return list;
     }
 
     @Override
@@ -71,10 +72,7 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void deleteCustomer(String id) {
-        for (CustomerDto customer : customerList){
-            if (customer.getId().equals(id))
-                customerList.remove(customer);
-        }
+        customerRepo.deleteById(id);
 
     }
 }
