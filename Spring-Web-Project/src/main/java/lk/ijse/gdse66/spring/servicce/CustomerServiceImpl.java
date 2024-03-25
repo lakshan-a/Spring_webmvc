@@ -2,6 +2,7 @@ package lk.ijse.gdse66.spring.servicce;
 
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -9,7 +10,11 @@ import java.util.List;
  * @author: LakshanR
  * @date: 3/25/2024
  */
+
 public class CustomerServiceImpl implements CustomerService{
+
+    ArrayList<CustomerDto> customerList = new ArrayList<>();
+
     @Override
     public List<CustomerDto> getAllCustomer() {
         return null;
