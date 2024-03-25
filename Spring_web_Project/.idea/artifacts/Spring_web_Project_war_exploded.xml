@@ -14,15 +14,16 @@
           <element id="module-output" name="Spring_web_Project" />
         </element>
         <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-aop:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-beans:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-context:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-core:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-expression:5.3.18" />
-          <element id="library" level="project" name="Maven: org.springframework:spring-web:5.3.18" />
-          <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.30" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:6.1.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-aop:6.1.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-beans:6.1.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-context:6.1.5" />
+          <element id="library" level="project" name="Maven: io.micrometer:micrometer-observation:1.12.4" />
+          <element id="library" level="project" name="Maven: io.micrometer:micrometer-commons:1.12.4" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-core:6.1.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-jcl:6.1.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-expression:6.1.5" />
+          <element id="library" level="project" name="Maven: org.springframework:spring-web:6.1.5" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.16.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.16.1" />
           <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.16.1" />
