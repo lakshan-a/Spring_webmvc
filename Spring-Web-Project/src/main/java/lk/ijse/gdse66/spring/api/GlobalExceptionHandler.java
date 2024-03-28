@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.spring.api;
 
 import lk.ijse.gdse66.spring.service.exception.DuplicateRecordException;
+import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import lk.ijse.gdse66.spring.service.exception.ServiceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,8 +22,13 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ServiceException.class)
     public ResponseEntity<Map<String,Object>> handleServiceException(ServiceException exception){
+        Map<String, Object> errorAttribute;
         if (exception instanceof DuplicateRecordException){
             getCommonErrorAttribute(HttpStatus.CONFLICT);
+        }else if (exception instanceof NotFoundException){
+            errorAttribute=getCommonErrorAttribute(HttpStatus.NOT_FOUND);
+        }else {
+            errorAttribute=getCommonErrorAttribute(HttpStatus.INTERNAL_SERVER_ERROR);
         }
 
     }
