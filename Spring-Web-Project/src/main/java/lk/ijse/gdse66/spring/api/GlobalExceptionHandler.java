@@ -24,10 +24,10 @@ public class GlobalExceptionHandler {
     }
 
     public Map<String,Object> getCommonErrorAttribute(HttpStatus status){
-        LinkedHashMap<String,Object> errorAttributrs = new  LinkedHashMap<>();
-        errorAttributrs.put("code",status.value());
-        errorAttributrs.put("status",status);
-        return errorAttributrs;
+        LinkedHashMap<String,Object> errorAttribute = new  LinkedHashMap<>();
+        errorAttribute.put("code",status.value());
+        errorAttribute.put("status",status);
+        return errorAttribute;
 
     }
 }
