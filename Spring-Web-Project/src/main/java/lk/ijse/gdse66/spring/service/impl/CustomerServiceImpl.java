@@ -27,7 +27,7 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
     @Autowired
     CustomerRepo repo;
 
-    ArrayList<CustomerDto> customerList = new ArrayList<>();
+//    ArrayList<CustomerDto> customerList = new ArrayList<>();
 
 
     @Autowired
