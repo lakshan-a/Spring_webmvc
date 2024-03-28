@@ -41,8 +41,6 @@ $('#btnSave').click(function () {
     };
 
     const jsonObj = JSON.stringify(customerObj);
-    $('#tblCustomers tbody').empty();
-
     $.ajax({
         url: "http://localhost:8080/app/api/v1/customer",
         method: "POST",
