@@ -5,6 +5,7 @@ package lk.ijse.gdse66.spring.service.exception;
  * @author: LakshanR
  * @date: 3/28/2024
  */
+
 public class DuplicateRecordException extends ServiceException{
 
     public DuplicateRecordException(String message) {
