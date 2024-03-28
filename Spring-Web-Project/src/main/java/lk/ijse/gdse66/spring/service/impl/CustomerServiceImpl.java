@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Stream;
 
 /**
  * @version: v0.0.1
@@ -33,6 +34,9 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public List<CustomerDto> getAllCustomers() {
+        List<Customer> customerList =repo.findAll();
+        Stream<Customer> customerStream =customerList.stream();
+
         return repo.findAll().stream()
                 .map(customer -> transformer.fromCustomerEntity(customer)).toList();
     }
