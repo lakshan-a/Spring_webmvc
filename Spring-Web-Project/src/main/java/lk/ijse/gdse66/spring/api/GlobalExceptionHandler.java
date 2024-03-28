@@ -2,6 +2,7 @@ package lk.ijse.gdse66.spring.api;
 
 import lk.ijse.gdse66.spring.service.exception.ServiceException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 import java.util.Map;
@@ -15,7 +16,10 @@ import java.util.Map;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    public ResponseEntity<Map<String,Object>> handleServiceException(ServiceException){
+    @ExceptionHandler(ServiceException.class)
+    public ResponseEntity<Map<String,Object>> handleServiceException(ServiceException exception){
 
     }
+
+    public Map<String,Object>
 }
