@@ -37,8 +37,7 @@ public class CustomerController {
 
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCustomer(@Valid @PathVariable("id") String id,
-                               @RequestBody CustomerDto customer){
+    public void updateCustomer(@Valid @PathVariable("id") String id,@RequestBody CustomerDto customer){
         customerService.updateCustomer(customer);
     }
 
