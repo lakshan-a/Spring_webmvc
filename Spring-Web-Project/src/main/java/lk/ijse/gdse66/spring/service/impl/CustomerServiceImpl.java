@@ -48,7 +48,7 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
     @Override
     public CustomerDto getCustomerDetails(String id) {
         if (!repo.existsById(id)){
-            throw new RuntimeException("Customer Id: "+id+ "dose not exist");
+            throw new RuntimeException("Customer Id: "+ id + "dose not exist");
         }
         return transformer.fromCustomerEntity(repo.findById(id).get());
     }
@@ -62,6 +62,9 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public void updateCustomer(CustomerDto customerDTO) {
+        if (!repo.existsById(customerDTO.getId())){
+            throw new RuntimeException("Updated Failed; customer id : " + customerDTO.getId() + "dose not exist");
+        }
         repo.save(transformer.toCustomerEntity(customerDTO));
     }
 
