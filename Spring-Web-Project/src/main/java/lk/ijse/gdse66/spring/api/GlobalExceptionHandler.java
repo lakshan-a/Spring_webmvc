@@ -5,6 +5,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -21,5 +22,7 @@ public class GlobalExceptionHandler {
 
     }
 
-    public Map<String,Object>
+    public Map<String,Object> getCommonErrorAttribute(){
+        new LinkedHashMap<>()
+    }
 }
