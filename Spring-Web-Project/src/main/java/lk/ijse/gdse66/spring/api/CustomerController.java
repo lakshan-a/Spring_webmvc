@@ -1,5 +1,6 @@
 package lk.ijse.gdse66.spring.api;
 
+import jakarta.validation.Valid;
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +25,7 @@ public class CustomerController {
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveCustomer(@RequestBody CustomerDto customer){
+    public void saveCustomer(@Valid @RequestBody CustomerDto customer){
         customerService.saveCustomer(customer);
     }
 
@@ -36,7 +37,7 @@ public class CustomerController {
 
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCustomer(@PathVariable("id") String id,
+    public void updateCustomer(@Valid @PathVariable("id") String id,
                                @RequestBody CustomerDto customer){
         customerService.updateCustomer(customer);
     }

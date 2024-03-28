@@ -54,6 +54,8 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:6.1.5" />
           <element id="library" level="project" name="Maven: jakarta.annotation:jakarta.annotation-api:2.0.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:2.0.2" />
+          <element id="library" level="project" name="Maven: org.hibernate.validator:hibernate-validator:8.0.1.Final" />
+          <element id="library" level="project" name="Maven: jakarta.validation:jakarta.validation-api:3.0.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">
