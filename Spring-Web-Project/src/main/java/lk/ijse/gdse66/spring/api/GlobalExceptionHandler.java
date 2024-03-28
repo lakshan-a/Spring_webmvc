@@ -26,6 +26,8 @@ public class GlobalExceptionHandler {
     public Map<String,Object> getCommonErrorAttribute(HttpStatus status){
         LinkedHashMap<String,Object> errorAttributrs = new  LinkedHashMap<>();
         errorAttributrs.put("code",status.value());
+        errorAttributrs.put("status",status);
+        return errorAttributrs;
 
     }
 }
