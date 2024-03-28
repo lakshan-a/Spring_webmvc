@@ -4,6 +4,7 @@ $('#btnGetAll').click(function () {
         method : "GET",
         success : function (resp) {
             console.log("Success: ", resp);
+            $('#tblCustomers tbody').empty();
             for (const customer of resp) {
                 console.log(customer.id);
                 console.log(customer.name);
@@ -40,6 +41,7 @@ $('#btnSave').click(function () {
     };
 
     const jsonObj = JSON.stringify(customerObj);
+    $('#tblCustomers tbody').empty();
 
     $.ajax({
         url: "http://localhost:8080/app/api/v1/customer",
