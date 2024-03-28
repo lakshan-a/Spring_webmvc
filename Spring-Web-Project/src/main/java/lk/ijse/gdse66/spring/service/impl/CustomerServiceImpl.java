@@ -3,6 +3,7 @@ package lk.ijse.gdse66.spring.service.impl;
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.repositories.CustomerRepo;
 import lk.ijse.gdse66.spring.service.util.Transformer;
+import lk.ijse.gdse66.spring.service.util.UtilMatter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,6 +43,7 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public void saveCustomer(CustomerDto customerDTO) {
+        customerDTO.setId(UtilMatter.generateId());
         repo.save(transformer.toCustomerEntity(customerDTO));
     }
 
