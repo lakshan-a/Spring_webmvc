@@ -45,7 +45,8 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
     @Override
     public CustomerDto saveCustomer(CustomerDto customerDTO) {
         customerDTO.setId(UtilMatter.generateId());
-        Customer customer = repo.save(transformer.toCustomerEntity(customerDTO));
+        return transformer.fromCustomerEntity(repo.save(transformer.toCustomerEntity(customerDTO)));
+//        Customer customer = repo.save(transformer.toCustomerEntity(customerDTO));
     }
 
     @Override
