@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.spring.service.impl;
 
 import lk.ijse.gdse66.spring.dto.CustomerDto;
+import lk.ijse.gdse66.spring.entity.Customer;
 import lk.ijse.gdse66.spring.repositories.CustomerRepo;
 import lk.ijse.gdse66.spring.service.util.Transformer;
 import lk.ijse.gdse66.spring.service.util.UtilMatter;
@@ -42,9 +43,9 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
     }
 
     @Override
-    public void saveCustomer(CustomerDto customerDTO) {
+    public CustomerDto saveCustomer(CustomerDto customerDTO) {
         customerDTO.setId(UtilMatter.generateId());
-        repo.save(transformer.toCustomerEntity(customerDTO));
+        Customer customer = repo.save(transformer.toCustomerEntity(customerDTO));
     }
 
     @Override
