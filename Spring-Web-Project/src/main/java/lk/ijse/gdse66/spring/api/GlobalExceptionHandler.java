@@ -30,7 +30,8 @@ public class GlobalExceptionHandler {
         }else {
             errorAttribute=getCommonErrorAttribute(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
+        errorAttribute.put("message",exception.getMessage());
+        return new ResponseEntity<>()
     }
 
     public Map<String,Object> getCommonErrorAttribute(HttpStatus status){
