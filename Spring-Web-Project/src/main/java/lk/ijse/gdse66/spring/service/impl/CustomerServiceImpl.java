@@ -70,6 +70,9 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public void deleteCustomer(String id) {
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Delete Failed; customer id :  "+ id + "dose not exist");
+        }
         repo.deleteById(id);
     }
 }
