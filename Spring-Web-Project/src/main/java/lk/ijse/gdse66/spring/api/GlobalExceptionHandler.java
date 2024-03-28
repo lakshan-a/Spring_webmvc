@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.spring.api;
 
 import lk.ijse.gdse66.spring.service.exception.ServiceException;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -22,7 +23,9 @@ public class GlobalExceptionHandler {
 
     }
 
-    public Map<String,Object> getCommonErrorAttribute(){
-        new LinkedHashMap<>()
+    public Map<String,Object> getCommonErrorAttribute(HttpStatus){
+        LinkedHashMap<String,Object> errorAttributrs = new  LinkedHashMap<>();
+        errorAttributrs.put("code",status)
+
     }
 }
