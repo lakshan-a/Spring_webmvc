@@ -21,17 +21,19 @@ import java.util.Map;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler(ServiceException.class)
-    public ResponseEntity<Map<String,Object>> handleServiceException(ServiceException exception){
-        Map<String, Object> errorAttribute;
-        if (exception instanceof DuplicateRecordException){
+    public ResponseEntity<Map<String,Object>> handleServiceException(ServiceException exp) {
+        Map<String, Object> errorAttribute = null;
+
+        if (exp instanceof DuplicateRecordException) {
             getCommonErrorAttribute(HttpStatus.CONFLICT);
-        }else if (exception instanceof NotFoundException){
-            errorAttribute=getCommonErrorAttribute(HttpStatus.NOT_FOUND);
-        }else {
-            errorAttribute=getCommonErrorAttribute(HttpStatus.INTERNAL_SERVER_ERROR);
+        } else if (exp instanceof NotFoundException) {
+            errorAttribute = getCommonErrorAttribute(HttpStatus.NOT_FOUND);
+        } else {
+            errorAttribute = getCommonErrorAttribute(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-        errorAttribute.put("message",exception.getMessage());
-        return new ResponseEntity<>()
+
+        errorAttribute.put("message",exp.getMessage());
+        return new ResponseEntity<>(errorAttribute,HttpStatus.valueOf((Integer) errorAttribute.get("code")));
     }
 
     public Map<String,Object> getCommonErrorAttribute(HttpStatus status){
