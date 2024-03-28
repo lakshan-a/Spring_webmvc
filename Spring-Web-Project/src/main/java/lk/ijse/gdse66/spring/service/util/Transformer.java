@@ -18,13 +18,17 @@ public class Transformer {
     @Autowired
     ModelMapper mapper;
 
-    public CustomerDto fromCustomerEntity(Customer customer){
-        CustomerDto customerDto = mapper.map(customer, CustomerDto.class);
-        return customerDto;
+    public Transformer(ModelMapper mapper) {
+        this.mapper = mapper;
     }
 
-    public Customer toCustomerEntity(CustomerDto customerDto){
-        Customer customer = mapper.map(customerDto, Customer.class);
+    public CustomerDto fromCustomerEntity(Customer customer){
+        CustomerDto customerDTO = mapper.map(customer, CustomerDto.class);
+        return customerDTO;
+    }
+
+    public Customer toCustomerEntity(CustomerDto customerDTO){
+        Customer customer = mapper.map(customerDTO, Customer.class);
         return customer;
     }
 }

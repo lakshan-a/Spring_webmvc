@@ -10,13 +10,13 @@ import java.util.List;
  * @date: 3/25/2024
  */
 public interface CustomerService {
-    List<CustomerDto> getAllCustomer();
+    List<CustomerDto> getAllCustomers();
 
-    CustomerDto getCustomerDetail (String id);
+    CustomerDto getCustomerDetails(String id);
 
-    void saveCustomer (CustomerDto customerDto);
+    void saveCustomer(CustomerDto customerDTO);
 
-    boolean updateCustomer (CustomerDto customerDto);
+    void updateCustomer(CustomerDto customerDTO);
 
-    void deleteCustomer (String id);
+    void deleteCustomer(String id);
 }

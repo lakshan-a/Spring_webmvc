@@ -7,7 +7,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -19,8 +18,8 @@ public class CustomerController {
     CustomerService customerService;
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<CustomerDto>getAllCustomer(){
-        return customerService.getAllCustomer();
+    public List<CustomerDto> getAllCustomers(){
+        return customerService.getAllCustomers();
     }
 
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
@@ -33,21 +32,17 @@ public class CustomerController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCustomer(@PathVariable("id") String id){
         customerService.deleteCustomer(id);
-
     }
 
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCustomer(@PathVariable("id") String id,@RequestBody CustomerDto customer){
+    public void updateCustomer(@PathVariable("id") String id,
+                               @RequestBody CustomerDto customer){
         customerService.updateCustomer(customer);
-
-
-
     }
 
-    @GetMapping("/{id}")
-    public CustomerDto getCustomerDetails(@PathVariable("id") String id){
-
-        return customerService.getCustomerDetail(id);
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public CustomerDto GetCustomerDetails(@PathVariable("id") String id){
+        return customerService.getCustomerDetails(id);
     }
 }

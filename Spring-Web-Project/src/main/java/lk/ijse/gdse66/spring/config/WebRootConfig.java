@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
 @ComponentScan(basePackages = {"lk.ijse.gdse66.spring.service","lk.ijse.gdse66.spring.repositories"})
 @Import(JPAConfig.class)
 public class WebRootConfig {
-    /*public WebRootConfig() {
+    public WebRootConfig() {
         System.out.println("WebRootConfig () -- Contractor");
-    }*/
+    }
 }
