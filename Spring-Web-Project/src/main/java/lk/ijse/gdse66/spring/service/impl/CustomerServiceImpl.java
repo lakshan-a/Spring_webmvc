@@ -35,6 +35,7 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public List<CustomerDto> getAllCustomers() {
+
         /*List<Customer> customerList =repo.findAll();
         Stream<Customer> customerStream =customerList.stream();
         Stream<CustomerDto> customerDtoStream = customerStream.map(customer -> transformer.fromCustomerEntity(customer));
@@ -46,6 +47,9 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public CustomerDto getCustomerDetails(String id) {
+        if (!repo.existsById(id)){
+            throw new RuntimeException("Customer Id: "+id+ "dose not exist");
+        }
         return transformer.fromCustomerEntity(repo.findById(id).get());
     }
 
