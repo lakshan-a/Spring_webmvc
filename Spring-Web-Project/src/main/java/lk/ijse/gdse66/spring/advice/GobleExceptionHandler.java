@@ -7,6 +7,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -17,6 +18,14 @@ import java.util.Map;
 
 @RestControllerAdvice
 public class GobleExceptionHandler {
+
+    public Map<String,Object> getCommonErrorAttribute(HttpStatus status){
+        LinkedHashMap<String,Object> errorAttributes = new LinkedHashMap<>();
+        errorAttributes.put("code",status.value());
+        errorAttributes.put("status",status);
+
+        return errorAttributes;
+    }
 
 
 }
