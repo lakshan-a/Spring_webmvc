@@ -14,6 +14,8 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     public WebAppInitializer() {
+        String property = System.getProperty("java.io.tmpdir");
+        System.out.println(property);
         System.out.println("WebAppInitializer () -- Contractor");
     }
 
