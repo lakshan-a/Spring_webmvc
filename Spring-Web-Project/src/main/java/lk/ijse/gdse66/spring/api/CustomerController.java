@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Base64;
 import java.util.List;
 
 @CrossOrigin(origins = "*")
@@ -23,11 +24,20 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveCustomer(@Valid @RequestBody CustomerDto customer){
+    public void saveCustomer(@Valid @RequestPart("id") String id,
+                             @RequestPart("name") String name,
+                             @RequestPart("address") String address,
+                             @RequestPart("profilePic") String profilePic) {
+        String base64Profilepic = Base64.getEncoder().encodeToString(profilePic.getBytes());
+        CustomerDto customer = new CustomerDto(id, name, address, base64Profilepic);
         customerService.saveCustomer(customer);
     }
+//    public void saveCustomer(@Valid @RequestBody CustomerDto customer){
+//        customerService.saveCustomer(customer);
+//    }
+
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
@@ -37,7 +47,9 @@ public class CustomerController {
 
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void updateCustomer(@Valid @PathVariable("id") String id,@RequestBody CustomerDto customer){
+    public void updateCustomer(@PathVariable("id") String id,
+                               @Valid @RequestBody CustomerDto customer){
+        customer.setId(id);
         customerService.updateCustomer(customer);
     }
 
