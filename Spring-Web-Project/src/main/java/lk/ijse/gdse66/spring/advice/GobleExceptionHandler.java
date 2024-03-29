@@ -5,9 +5,13 @@ import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import lk.ijse.gdse66.spring.service.exception.ServiceException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.FieldError;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -35,6 +39,28 @@ public class GobleExceptionHandler {
 
         return new ResponseEntity<>(errorAttribute,HttpStatus.valueOf((Integer) errorAttribute.get("code")));
     }
+
+
+    @ExceptionHandler(MethodArgumentNotValidException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public Map<String,Object> handleDataValidationException(MethodArgumentNotValidException exp){
+        Map<String,Object> errorAttribute = getCommonErrorAttribute(HttpStatus.BAD_REQUEST);
+        ArrayList<Map<String,Object>> errorList = new ArrayList<>();
+
+        for (FieldError fieldError : exp.getFieldErrors()){
+            LinkedHashMap<String, Object> errorMap = new LinkedHashMap<>();
+            errorMap.put("filed",fieldError.getField());
+            errorMap.put("error",fieldError.getDefaultMessage());
+            errorMap.put("rejected",fieldError.getRejectedValue());
+
+            errorList.add(errorMap);
+        }
+        errorAttribute.put("massage","Data validation failed");
+        errorAttribute.put("errors",errorList);
+
+        return errorAttribute;
+    }
+
 
     public Map<String,Object> getCommonErrorAttribute(HttpStatus status){
         LinkedHashMap<String,Object> errorAttributes = new LinkedHashMap<>();
