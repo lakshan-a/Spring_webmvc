@@ -35,10 +35,10 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public List<CustomerDto> getAllCustomers() {
-//        List<Customer> customerList = repo.findAll();
-//        Stream<Customer> stream = customerList.stream();
-//        Stream<CustomerDto> objectStream = stream.map(customer -> transformer.fromCustomerEntity(customer));
-//        List<CustomerDto> collect = objectStream.collect(Collectors.toList());
+        /*List<Customer> customerList = repo.findAll();
+        Stream<Customer> stream = customerList.stream();
+        Stream<CustomerDto> objectStream = stream.map(customer -> transformer.fromCustomerEntity(customer));
+        List<CustomerDto> collect = objectStream.collect(Collectors.toList());*/
         return repo.findAll().stream() //strem eke coustomerla polimata hadanwa
                 .map(customer -> transformer.fromCustomerEntity(customer)).toList();
 
