@@ -13,13 +13,15 @@ import java.io.Serializable;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomerDto implements Serializable {
-    @Null(message = "id is auto generated")
+
+    @Null(message = "Id Is Auto Generated")
     private String id;
-    @NotBlank(message = "name can not be null")
-    @Pattern(regexp = "[A-Za-z]+", message = "name not valid")
+    @NotBlank(message = "Name Cannot Been Null")
+//    @Pattern(regexp = "[A-Za-z]+$", message = "Name IS Not Validated")
     private String name;
-    @NotBlank(message = "address can not be null")
+    @NotBlank(message = "Address Cannot Been Null")
     private String address;
+    private String ProfilePic;
 
 
 }
