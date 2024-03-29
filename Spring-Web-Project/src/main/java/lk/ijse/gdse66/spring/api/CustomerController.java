@@ -30,8 +30,8 @@ public class CustomerController {
                              @RequestPart("name") String name,
                              @RequestPart("address") String address,
                              @RequestPart("profilePic") String profilePic) {
-        String base64Profilepic = Base64.getEncoder().encodeToString(profilePic.getBytes());
-        CustomerDto customer = new CustomerDto(id, name, address, base64Profilepic);
+        String base64ProfilePic = Base64.getEncoder().encodeToString(profilePic.getBytes());
+        CustomerDto customer = new CustomerDto(id, name, address, base64ProfilePic);
         customerService.saveCustomer(customer);
     }
     /*public void saveCustomer(@Valid @RequestBody CustomerDto customer){
