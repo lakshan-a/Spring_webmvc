@@ -34,9 +34,9 @@ public class CustomerController {
         CustomerDto customer = new CustomerDto(id, name, address, base64Profilepic);
         customerService.saveCustomer(customer);
     }
-//    public void saveCustomer(@Valid @RequestBody CustomerDto customer){
-//        customerService.saveCustomer(customer);
-//    }
+    /*public void saveCustomer(@Valid @RequestBody CustomerDto customer){
+        customerService.saveCustomer(customer);
+    }*/
 
 
     @DeleteMapping("/{id}")
