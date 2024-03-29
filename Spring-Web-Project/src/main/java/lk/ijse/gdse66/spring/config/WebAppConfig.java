@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "lk.ijse.gdse66.spring.api")
+@ComponentScan(basePackages = {"lk.ijse.gdse66.spring.api","lk.ijse.gdse66.spring.advice"})
 public class WebAppConfig implements WebMvcConfigurer {
     public WebAppConfig() {
         System.out.println("WebAppConfig () -- Contractor");
