@@ -3,6 +3,7 @@ package lk.ijse.gdse66.spring.service.impl;
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.dto.ItemDto;
 import lk.ijse.gdse66.spring.repositories.CustomerRepo;
+import lk.ijse.gdse66.spring.repositories.ItemRepo;
 import lk.ijse.gdse66.spring.service.util.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -17,9 +18,9 @@ import java.util.List;
 public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemService {
 
     @Autowired
-    CustomerRepo repo;
+    ItemRepo repo;
 
-    ArrayList<CustomerDto> customerList = new ArrayList<>();
+    ArrayList<ItemDto> itemList = new ArrayList<>();
 
 
     @Autowired
