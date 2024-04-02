@@ -34,12 +34,12 @@ public class ItemController {
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
-    public void saveItem(@Valid @RequestPart("id") String id,
-                             @RequestPart("name") String name,
-                             @RequestPart("address") String address,
-                             @RequestPart("profilePic") String profilePic) {
-        String base64ProfilePic = Base64.getEncoder().encodeToString(profilePic.getBytes());
-        ItemDto item = new ItemDto(id, name, address, base64ProfilePic);
+    public void saveItem(@Valid @RequestPart("code") String itemCode,
+                             @RequestPart("name") String itemName,
+                             @RequestPart("price") Double itemPrice,
+                             @RequestPart("Qty") int itemQty) {
+//        String base64ProfilePic = Base64.getEncoder().encodeToString(profilePic.getBytes());
+        ItemDto item = new ItemDto(itemCode, itemName, itemPrice, itemQty);
         itemService.saveItem(item);
     }
 }
