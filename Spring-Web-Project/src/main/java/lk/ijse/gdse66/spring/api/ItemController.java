@@ -45,8 +45,8 @@ public class ItemController {
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteCustomer(@PathVariable("id") String id){
-        customerService.deleteCustomer(id);
+    public void deleteItem(@PathVariable("id") String id){
+        itemService.deleteItem(id);
     }
 
 }
