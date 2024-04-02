@@ -49,4 +49,11 @@ public class ItemController {
         itemService.deleteItem(id);
     }
 
+    @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void updateItem(@PathVariable("id") String id,
+                               @Valid @RequestBody ItemDto item){
+        item.setItemCode(id);
+        itemService.updateItem(item);
+    }
 }
