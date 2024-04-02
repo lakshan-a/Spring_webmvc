@@ -59,6 +59,9 @@ public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemServic
 
     @Override
     public void deleteItem(String id) {
-
+        if (!repo.existsById(id)){
+            throw new NotFoundException("Delete Filled Code :" + id +"Does not exist");
+        }
+        repo.deleteById(id);
     }
 }
