@@ -1,9 +1,7 @@
 package lk.ijse.gdse66.spring.api;
 
 import jakarta.validation.Valid;
-import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.dto.ItemDto;
-import lk.ijse.gdse66.spring.service.CustomerService;
 import lk.ijse.gdse66.spring.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
