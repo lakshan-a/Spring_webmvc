@@ -42,4 +42,11 @@ public class ItemController {
         ItemDto item = new ItemDto(itemCode, itemName, itemPrice, itemQty);
         itemService.saveItem(item);
     }
+
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteCustomer(@PathVariable("id") String id){
+        customerService.deleteCustomer(id);
+    }
+
 }
