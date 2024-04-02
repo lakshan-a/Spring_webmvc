@@ -17,6 +17,8 @@ import java.util.List;
  */
 public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemService {
 
+
+
     @Autowired
     ItemRepo repo;
 
@@ -28,7 +30,7 @@ public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemServic
 
     @Override
     public List<ItemDto> getAllItems() {
-        return null;
+        return repo.findAll().stream().map(item -> transformer.fromItemEntity(item)).toList();
     }
 
     @Override
