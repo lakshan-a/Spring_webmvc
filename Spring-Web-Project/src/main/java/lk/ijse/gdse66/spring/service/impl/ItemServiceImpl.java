@@ -4,6 +4,7 @@ import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.dto.ItemDto;
 import lk.ijse.gdse66.spring.repositories.CustomerRepo;
 import lk.ijse.gdse66.spring.repositories.ItemRepo;
+import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import lk.ijse.gdse66.spring.service.util.Transformer;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -35,7 +36,10 @@ public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemServic
 
     @Override
     public ItemDto getItemDetails(String id) {
-        return null;
+        if (!repo.existsById(id)){
+            throw new NotFoundException("Item Code :" + id +"Dones not exis");
+        }
+        return transformer.fromItemEntity(repo.findById(id).get());
     }
 
     @Override
