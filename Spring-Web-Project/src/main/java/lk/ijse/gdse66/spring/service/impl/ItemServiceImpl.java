@@ -51,7 +51,10 @@ public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemServic
 
     @Override
     public void updateItem(ItemDto itemDto) {
-
+        if (!repo.existsById(itemDto.getItemCode())){
+            throw new NotFoundException("Update Filled Id :" + itemDto.getItemCode() +"Does not exist");
+        }
+        repo.save(transformer.toItemEntity(itemDto));
     }
 
     @Override
