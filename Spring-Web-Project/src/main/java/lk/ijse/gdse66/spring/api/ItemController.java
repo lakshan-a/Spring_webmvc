@@ -36,7 +36,6 @@ public class ItemController {
                              @RequestPart("name") String itemName,
                              @RequestPart("price") Double itemPrice,
                              @RequestPart("Qty") int itemQty) {
-//        String base64ProfilePic = Base64.getEncoder().encodeToString(profilePic.getBytes());
         ItemDto item = new ItemDto(itemCode, itemName, itemPrice, itemQty);
         itemService.saveItem(item);
     }
