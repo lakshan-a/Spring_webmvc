@@ -1,5 +1,9 @@
 package lk.ijse.gdse66.spring.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 
 /**
@@ -7,5 +11,15 @@ import java.io.Serializable;
  * @author: LakshanR
  * @date: 4/2/2024
  */
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ItemDto implements Serializable {
+
+    private String ItemCode;
+    private String ItemName;
+    private double ItemPrice;
+    private int ItemQty;
+
 }
