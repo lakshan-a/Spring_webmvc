@@ -56,4 +56,9 @@ public class ItemController {
         item.setItemCode(id);
         itemService.updateItem(item);
     }
+
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ItemDto GetItemDetails(@PathVariable("id") String id){
+        return itemService.getItemDetails(id);
+    }
 }
