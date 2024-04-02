@@ -6,6 +6,7 @@ import lk.ijse.gdse66.spring.repositories.CustomerRepo;
 import lk.ijse.gdse66.spring.repositories.ItemRepo;
 import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import lk.ijse.gdse66.spring.service.util.Transformer;
+import lk.ijse.gdse66.spring.service.util.UtilMatter;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.ArrayList;
@@ -44,7 +45,8 @@ public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemServic
 
     @Override
     public ItemDto saveItem(ItemDto itemDto) {
-        return null;
+        itemDto.setItemCode(UtilMatter.generateId());
+        return transformer.fromItemEntity(repo.save(transformer.toItemEntity(itemDto)));
     }
 
     @Override
