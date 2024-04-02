@@ -8,6 +8,8 @@ import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import lk.ijse.gdse66.spring.service.util.Transformer;
 import lk.ijse.gdse66.spring.service.util.UtilMatter;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,9 +19,10 @@ import java.util.List;
  * @author: LakshanR
  * @date: 4/2/2024
  */
+
+@Service
+@Transactional
 public class ItemServiceImpl implements lk.ijse.gdse66.spring.service.ItemService {
-
-
 
     @Autowired
     ItemRepo repo;
