@@ -2,6 +2,7 @@ package lk.ijse.gdse66.spring.repositories;
 
 import lk.ijse.gdse66.spring.entity.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
@@ -18,5 +19,9 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     Customer searchByNameAndAddress(String name ,String address);
 
     int countCustomersByAddressStartsWith(String letters);
+
+    @Query(value = "")
+    List<Customer> getAllCustomers();
+
 }
 
