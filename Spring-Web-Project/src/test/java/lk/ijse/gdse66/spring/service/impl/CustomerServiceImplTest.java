@@ -25,7 +25,17 @@ class CustomerServiceImplTest {
 
     @Test  //test case ekak
     void getAllCustomers() {
-        assertNotEquals("null",customerService.getAllCustomers());
+
+        CustomerDto customer1 = new CustomerDto("C001", "Lakshan", "Matara", "Profilel");
+        CustomerDto customer2 = new CustomerDto("C002","rashmika","galle","Profilel");
+        CustomerDto customer3 = new CustomerDto("C003","kalshan","colombo","Profilel");
+
+        customerService.saveCustomer(customer1);
+        customerService.saveCustomer(customer2);
+        customerService.saveCustomer(customer3);
+
+
+//        assertNotEquals("null",customerService.getAllCustomers());
 
     }
 
