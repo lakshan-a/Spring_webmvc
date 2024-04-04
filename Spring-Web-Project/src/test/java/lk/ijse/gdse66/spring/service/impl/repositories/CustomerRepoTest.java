@@ -54,4 +54,11 @@ class CustomerRepoTest {
         }
     }
 
+    @Test
+    void getCustomersByAddress(){
+        addAllCustomers();
+        List<Customer> customerList =customerRepo.searchByNameAndAddress("lakshan","matara");
+        for ()
+    }
+
 }
