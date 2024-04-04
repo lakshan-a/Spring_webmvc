@@ -1,7 +1,6 @@
 package lk.ijse.gdse66.spring.service.impl;
 
 import lk.ijse.gdse66.spring.dto.CustomerDto;
-import lk.ijse.gdse66.spring.entity.Customer;
 import lk.ijse.gdse66.spring.repositories.CustomerRepo;
 import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import lk.ijse.gdse66.spring.service.util.Transformer;
@@ -12,19 +11,16 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 /**
  * @version: v0.0.1
  * @author: LakshanR
- * @date: 3/25/2024
+ * @date: 4/4/2024
  */
 
 @Service
 @Transactional
-
-public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.CustomerService {
+public class CustomerService implements lk.ijse.gdse66.spring.service.CustomerService{
     @Autowired
     CustomerRepo repo;
 
