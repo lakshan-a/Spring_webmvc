@@ -87,6 +87,9 @@ class CustomerServiceImplTest {
 
     @Test
     void deleteCustomer() {
+
+        CustomerDto customerDto =addOneCustomer();
+
         assertThrows(NotFoundException.class, () ->customerService.deleteCustomer("C001"));
 
     }
