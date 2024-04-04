@@ -61,7 +61,10 @@ class CustomerServiceImplTest {
 
     @Test
     void updateCustomer() {
-        assertThrows(NotFoundException.class, () ->customerService.updateCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel")));
+
+        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
+
+        assertThrows(NotFoundException.class, () ->customerService.updateCustomer(new CustomerDto("C001", "Rashmika", "Galle", "Profilel")));
 
     }
 
