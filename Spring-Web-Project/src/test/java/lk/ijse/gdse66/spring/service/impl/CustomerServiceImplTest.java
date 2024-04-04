@@ -9,11 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
+import org.springframework.transaction.annotation.Transactional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith({SpringExtension.class})
 @ContextConfiguration(classes = WebRootConfig.class)
+@Transactional
 //@SpringJUnitConfig
 class CustomerServiceImplTest {
   
@@ -34,6 +36,7 @@ class CustomerServiceImplTest {
         CustomerDto customer = customerService.saveCustomer(customerDto);
 
         assertNotEquals(null,customer);
+
         
     }
 
