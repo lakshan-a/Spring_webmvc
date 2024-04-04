@@ -28,11 +28,12 @@ class CustomerServiceImplTest {
 
     @Test  //test case ekak
     void getCustomerDetails() {
-        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
-        CustomerDto customer = customerService.saveCustomer(customerDto);
+//        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
+        CustomerDto customerDto = customerService.saveCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel"));
 
-        CustomerDto customerDetails = customerService.getCustomerDetails(customer.getId());
+//        CustomerDto customerDetails = customerService.getCustomerDetails(customer.getId());
 
+        assertDoesNotThrow(() -> customerService.getCustomerDetails(customerDto.getId()));
 
     }
 
