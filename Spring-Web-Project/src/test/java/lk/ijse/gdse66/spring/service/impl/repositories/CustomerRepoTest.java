@@ -55,10 +55,16 @@ class CustomerRepoTest {
     }
 
     @Test
-    void getCustomersByAddress(){
+    void getCustomersByNameAndAddress(){
         addAllCustomers();
-        List<Customer> customerList =customerRepo.searchByNameAndAddress("lakshan","matara");
-        for ()
+
+    }
+
+    @Test
+    void countCustomerByStartsWish(){
+        addAllCustomers();
+        int count = customerRepo.countCustomersByAddressStartsWith("Ma");
+        System.out.println(count);
     }
 
 }
