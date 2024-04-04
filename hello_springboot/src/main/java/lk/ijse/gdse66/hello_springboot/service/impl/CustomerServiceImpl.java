@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.hello_springboot.service.impl;
 
 import lk.ijse.gdse66.hello_springboot.dto.CustomerDTO;
+import lk.ijse.gdse66.hello_springboot.entity.CustomerEntity;
 import lk.ijse.gdse66.hello_springboot.repository.CustomerRepo;
 import lk.ijse.gdse66.hello_springboot.service.CustomerService;
 import org.modelmapper.ModelMapper;
@@ -24,6 +25,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public List<CustomerDTO> getAllCustomer() {
+        customerRepo.findAll().stream().map(customerEntity -> modelMapper.map(customerRepo.))
         return null;
     }
 
@@ -34,7 +36,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public CustomerDTO saveCustomer(CustomerDTO customerDTO) {
-        return null;
+        return modelMapper.map(customerRepo.save(modelMapper.map(customerDTO, CustomerEntity.class)), CustomerDTO.class);
     }
 
     @Override
