@@ -23,7 +23,6 @@ class CustomerServiceImplTest {
     @Autowired
     CustomerService customerService;
 
-    @Autowired
     CustomerDto addOneCustomer(){
         CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "ProfilePic");
         return customerService.saveCustomer(customerDto);
