@@ -30,11 +30,10 @@ class CustomerServiceImplTest {
 
     @Test
     void saveCustomer() {
-        CustomerDto customerDto = new CustomerDto("C001", "navishka", "Galle", "Profilel");
+        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
         CustomerDto customer = customerService.saveCustomer(customerDto);
 
         assertNotEquals(null,customer);
-
         
     }
 
