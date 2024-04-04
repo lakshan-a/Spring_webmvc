@@ -17,6 +17,6 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
 
     Customer searchByNameAndAddress(String name ,String address);
 
-    int countCustomersByAddressStartsWith();
+    int countCustomersByAddressStartsWith(String letters);
 }
 
