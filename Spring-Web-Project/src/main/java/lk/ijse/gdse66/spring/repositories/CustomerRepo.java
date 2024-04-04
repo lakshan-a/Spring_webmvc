@@ -29,7 +29,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     @Query(value = "from Customer c")
     List<Customer> getAllCustomersWithHQL();
 
-    @Query(value = "select * from  customers where name=?1 and address=?1")
+    @Query(value = "select * from  customers where name=?1 and address=?2",nativeQuery = true)
     List<Customer> getAllCustomersByNameAndAddress(String name, String address);
 
 }
