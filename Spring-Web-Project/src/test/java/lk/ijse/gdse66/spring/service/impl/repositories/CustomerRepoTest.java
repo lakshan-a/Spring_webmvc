@@ -81,7 +81,8 @@ class CustomerRepoTest {
     @Test
     void getAllCustomersWithNameAndAddress(){
         addAllCustomers();
-        List<Customer> customerList = customerRepo.getAllCustomersByNameAndAddress("lakshan", "matara");
+//        List<Customer> customerList = customerRepo.getAllCustomersByNameAndAddress("lakshan", "matara");
+        List<Customer> customerList = customerRepo.getAllCustomersByNameAndAddress2("lakshan", "matara");
         customerList.forEach(customer -> System.out.println(customer));
     }
 

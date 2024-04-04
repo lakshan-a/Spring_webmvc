@@ -34,8 +34,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     List<Customer> getAllCustomersByNameAndAddress(String name, String address);
 
     @Query(value = "select * from  customer where name=:name and address=:address",nativeQuery = true)
-    List<Customer> getAllCustomersByNameAndAddress2(@Param("name") String name,
-                                                    @Param("address") String address);
+    List<Customer> getAllCustomersByNameAndAddress2(@Param("name") String name, @Param("address") String address);
 
 }
 
