@@ -1,7 +1,10 @@
 package lk.ijse.gdse66.hello_springboot.service.impl;
 
 import lk.ijse.gdse66.hello_springboot.dto.CustomerDTO;
+import lk.ijse.gdse66.hello_springboot.repository.CustomerRepo;
 import lk.ijse.gdse66.hello_springboot.service.CustomerService;
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -12,6 +15,13 @@ import java.util.List;
  */
 
 public class CustomerServiceImpl implements CustomerService {
+
+    @Autowired
+    CustomerRepo customerRepo;
+
+    @Autowired
+    ModelMapper modelMapper;
+
     @Override
     public List<CustomerDTO> getAllCustomer() {
         return null;
