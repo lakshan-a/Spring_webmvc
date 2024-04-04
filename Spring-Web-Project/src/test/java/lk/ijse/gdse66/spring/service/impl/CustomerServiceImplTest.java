@@ -12,6 +12,8 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith({SpringExtension.class})
@@ -19,77 +21,75 @@ import static org.junit.jupiter.api.Assertions.*;
 @Transactional
 //@SpringJUnitConfig
 class CustomerServiceImplTest {
-  
+
     @Autowired
     CustomerService customerService;
 
     CustomerDto addOneCustomer(){
-        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "ProfilePic");
-        return customerService.saveCustomer(customerDto);
-
+        CustomerDto customerDTO = new CustomerDto("C001",
+                "Kasun Sampath", "Galle", "ProfilePic1");
+        return customerService.saveCustomer(customerDTO);
     }
 
-    void addAllCustomer(){
-        CustomerDto customer1 = new CustomerDto("C001", "Lakshan", "Matara", "Profilel");
-        CustomerDto customer2 = new CustomerDto("C002","rashmika","galle","Profilel");
-        CustomerDto customer3 = new CustomerDto("C003","kalshan","colombo","Profilel");
+    void addAllCustomers(){
+        CustomerDto customer1 = new CustomerDto("C001", "Kasun Sampath", "Galle", "ProfilePic1");
+        CustomerDto customer2 = new CustomerDto("C002", "Saman Kumara", "Matara", "ProfilePic2");
+        CustomerDto customer3 = new CustomerDto("C003", "Amal Perera", "Panadura", "ProfilePic3");
 
         customerService.saveCustomer(customer1);
         customerService.saveCustomer(customer2);
         customerService.saveCustomer(customer3);
     }
 
-
-
-    @Test  //test case ekak
+    @Test
     void getAllCustomers() {
+        addAllCustomers();
 
-
-
-
-//        assertNotEquals("null",customerService.getAllCustomers());
-
+        List<CustomerDto> allCustomers = customerService.getAllCustomers();
+        assertEquals(3,allCustomers.size());
     }
 
-    @Test  //test case ekak
+    @Test
     void getCustomerDetails() {
-        assertThrows(NotFoundException.class, () ->customerService.getCustomerDetails("C001"));
+        assertThrows(NotFoundException.class,
+                () -> customerService.getCustomerDetails("C001"));
 
+        CustomerDto customerDTO = addOneCustomer();
 
-
-        /*CustomerDto customerDto = customerService.saveCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel"));
-        assertDoesNotThrow(() -> customerService.getCustomerDetails(customerDto.getId()));*/
-
+        assertDoesNotThrow(() ->
+                customerService.getCustomerDetails(customerDTO.getId()));
     }
 
     @Test
     void saveCustomer() {
-        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
-        CustomerDto customer = customerService.saveCustomer(customerDto);
-
+        CustomerDto customerDTO = new CustomerDto("C001",
+                "Kasun Sampath", "Galle", "ProfilePic1");
+        CustomerDto customer = customerService.saveCustomer(customerDTO);
         assertNotEquals(null,customer);
         assertNotEquals("C001",customer.getId());
-
-        
+        assertNotNull(customer);
     }
 
     @Test
     void updateCustomer() {
         CustomerDto customerDto = addOneCustomer();
 
-        assertThrows(NotFoundException.class, () ->customerService.updateCustomer(new CustomerDto("C001", "Rashmika", "Galle", "Profilel")));
 
-        assertDoesNotThrow(() ->customerService.updateCustomer(new CustomerDto(customerDto.getId(), "Rashmika", "Galle", "Profilel")));
+        assertThrows(NotFoundException.class,
+                () -> customerService.updateCustomer(new CustomerDto(
+                        "C001","Janith Lakmal","Kandy",
+                        "ProfilePic1")));
 
-
+        assertDoesNotThrow(() -> customerService.updateCustomer(new CustomerDto(
+                customerDto.getId(),"Janith Lakmal","Kandy",
+                "ProfilePic1")));
     }
 
     @Test
     void deleteCustomer() {
+        CustomerDto customerDTO = addOneCustomer();
 
-        CustomerDto customerDto =addOneCustomer();
-
-        assertThrows(NotFoundException.class, () ->customerService.deleteCustomer("C001"));
-
+        assertThrows(NotFoundException.class,
+                () -> customerService.deleteCustomer("C001"));
     }
 }
