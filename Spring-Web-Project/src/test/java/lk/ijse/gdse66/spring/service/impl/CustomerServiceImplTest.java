@@ -30,7 +30,7 @@ class CustomerServiceImplTest {
 
     }
 
-    addAllCustomer(){
+    void addAllCustomer(){
         CustomerDto customer1 = new CustomerDto("C001", "Lakshan", "Matara", "Profilel");
         CustomerDto customer2 = new CustomerDto("C002","rashmika","galle","Profilel");
         CustomerDto customer3 = new CustomerDto("C003","kalshan","colombo","Profilel");
