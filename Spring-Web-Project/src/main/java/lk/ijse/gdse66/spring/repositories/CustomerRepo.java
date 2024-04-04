@@ -21,7 +21,7 @@ public interface CustomerRepo extends JpaRepository<Customer,String> {
     int countCustomersByAddressStartsWith(String letters);
 
     @Query(value = "select * from customers",nativeQuery = true)
-    List<Customer> getAllCustomers();
+    List<Customer> getAllCustomersWithSql();
 
 }
 

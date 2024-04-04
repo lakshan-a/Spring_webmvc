@@ -69,4 +69,11 @@ class CustomerRepoTest {
         System.out.println(count);
     }
 
+    @Test
+    void getAllCustomers(){
+        List<Customer> customerList = customerRepo.getAllCustomersWithSql();
+        customerList.forEach(customer -> System.out.println(customer));
+
+
+    }
 }
