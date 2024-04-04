@@ -36,10 +36,10 @@ public class JPAConfig {
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dmds = new DriverManagerDataSource();
-        dmds.setUrl("jdbc:mysql://localhost:3306/gdse66_spring_web?createDatabaseIfNotExist=true");
-        dmds.setUsername("root");
-        dmds.setPassword("12345");
-        dmds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dmds.setUrl(env.getRequiredProperty("spring.datasource.url"));
+        dmds.setUsername(env.getRequiredProperty("spring.datasource.username"));
+        dmds.setPassword(env.getRequiredProperty("spring.datasource.password"));
+        dmds.setDriverClassName(env.getRequiredProperty("spring.datasource.driverClassName"));
         return dmds;
     }
 
