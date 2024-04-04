@@ -10,7 +10,8 @@ import java.util.List;
  * @date: 4/4/2024
  */
 
-public interface CustometrService {
+public interface CustomerService {
+
     List<CustomerDTO> getAllCustomer();
     CustomerDTO getCustomerDetails(String id);
     CustomerDTO saveCustomer(CustomerDTO customerDTO);
