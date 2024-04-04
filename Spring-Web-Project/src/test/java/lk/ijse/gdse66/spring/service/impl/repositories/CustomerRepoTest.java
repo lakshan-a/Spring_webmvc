@@ -71,9 +71,13 @@ class CustomerRepoTest {
 
     @Test
     void getAllCustomers(){
-        List<Customer> customerList = customerRepo.getAllCustomersWithSql();
+        addAllCustomers();
+//        List<Customer> customerList = customerRepo.getAllCustomersWithSql();
+//        List<Customer> customerList = customerRepo.getAllCustomersWithJPQL();
+        List<Customer> customerList = customerRepo.getAllCustomersWithHQL();
         customerList.forEach(customer -> System.out.println(customer));
-
-
     }
+
+
+    void
 }
