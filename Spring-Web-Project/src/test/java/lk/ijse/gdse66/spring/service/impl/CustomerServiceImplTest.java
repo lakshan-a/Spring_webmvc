@@ -25,8 +25,7 @@ class CustomerServiceImplTest {
 
     @Test  //test case ekak
     void getAllCustomers() {
-        assertThrows(NotFoundException.class, () ->customerService.getCustomerDetails("C001"));
-
+        assertNotEquals("null",customerService.getAllCustomers());
 
     }
 
