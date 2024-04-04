@@ -6,12 +6,16 @@ import lk.ijse.gdse66.spring.config.WebAppConfig;
 import lk.ijse.gdse66.spring.config.WebRootConfig;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import java.util.Properties;
+
 /**
  * @version: v0.0.1
  * @author: LakshanR
  * @date: 3/27/2024
  */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+
 
     public WebAppInitializer() {
         String property = System.getProperty("java.io.tmpdir");

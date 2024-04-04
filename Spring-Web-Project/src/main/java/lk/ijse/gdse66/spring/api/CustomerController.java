@@ -13,7 +13,7 @@ import java.util.List;
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("/api/v1/customer")
+@RequestMapping("/api/v1/customers")
 public class CustomerController {
 
     @Autowired
@@ -30,13 +30,13 @@ public class CustomerController {
                              @RequestPart("name") String name,
                              @RequestPart("address") String address,
                              @RequestPart("profilePic") String profilePic) {
-        String base64ProfilePic = Base64.getEncoder().encodeToString(profilePic.getBytes());
-        CustomerDto customer = new CustomerDto(id, name, address, base64ProfilePic);
+        String base64Profilepic = Base64.getEncoder().encodeToString(profilePic.getBytes());
+        CustomerDto customer = new CustomerDto(id, name, address, base64Profilepic);
         customerService.saveCustomer(customer);
     }
-    /*public void saveCustomer(@Valid @RequestBody CustomerDto customer){
-        customerService.saveCustomer(customer);
-    }*/
+//    public void saveCustomer(@Valid @RequestBody CustomerDto customer){
+//        customerService.saveCustomer(customer);
+//    }
 
 
     @DeleteMapping("/{id}")
@@ -48,7 +48,7 @@ public class CustomerController {
     @PatchMapping(value = "/{id}",consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void updateCustomer(@PathVariable("id") String id,
-                               @Valid @RequestBody CustomerDto customer){
+                              @Valid @RequestBody CustomerDto customer){
         customer.setId(id);
         customerService.updateCustomer(customer);
     }

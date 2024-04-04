@@ -15,16 +15,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * @version: v0.0.1
- * @author: LakshanR
- * @date: 3/25/2024
- */
 
-@Service
-@Transactional
-
+@Service //component scan and create bean
+@Transactional //database operation connect ekak eka unit ekak athule successful wenna one ehama nathi unoth wade wenne nh e de me annotion eka use karala pulun karagnna
 public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.CustomerService {
+
     @Autowired
     CustomerRepo repo;
 
@@ -36,10 +31,10 @@ public class CustomerServiceImpl implements lk.ijse.gdse66.spring.service.Custom
 
     @Override
     public List<CustomerDto> getAllCustomers() {
-        /*List<Customer> customerList = repo.findAll();
-        Stream<Customer> stream = customerList.stream();
-        Stream<CustomerDto> objectStream = stream.map(customer -> transformer.fromCustomerEntity(customer));
-        List<CustomerDto> collect = objectStream.collect(Collectors.toList());*/
+//        List<Customer> customerList = repo.findAll();
+//        Stream<Customer> stream = customerList.stream();
+//        Stream<CustomerDto> objectStream = stream.map(customer -> transformer.fromCustomerEntity(customer));
+//        List<CustomerDto> collect = objectStream.collect(Collectors.toList());
         return repo.findAll().stream() //strem eke coustomerla polimata hadanwa
                 .map(customer -> transformer.fromCustomerEntity(customer)).toList();
 

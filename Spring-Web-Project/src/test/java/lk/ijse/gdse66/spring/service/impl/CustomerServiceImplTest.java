@@ -10,32 +10,32 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 
-/**
- * @version: v0.0.1
- * @author: LakshanR
- * @date: 4/4/2024
- */
+import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith({SpringExtension.class})
 @ContextConfiguration(classes = WebRootConfig.class)
-//@SpringJUnitConfig(classes = WebRootConfig.class)
-public class CustomerServiceImplTest {
-
+//@SpringJUnitConfig
+class CustomerServiceImplTest {
+  
     @Autowired
     CustomerService customerService;
 
-    @Test
+    @Test  //test case ekak
     void getAllCustomers() {
     }
 
-    @Test
+    @Test  //test case ekak
     void getCustomerDetails() {
     }
 
     @Test
     void saveCustomer() {
-        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Matara", "ProfilePic1");
-        CustomerDto customer = customerService.saveCustomer(customerService.saveCustomer(customerDto));
+        CustomerDto customerDto = new CustomerDto("C001", "navishka", "Galle", "Profilel");
+        CustomerDto customer = customerService.saveCustomer(customerDto);
+
+        assertNotEquals(null,customer);
+
+        
     }
 
     @Test
