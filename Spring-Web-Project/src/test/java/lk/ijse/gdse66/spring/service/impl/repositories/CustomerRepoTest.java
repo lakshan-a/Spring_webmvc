@@ -39,12 +39,13 @@ class CustomerRepoTest {
 
     @Test
     void saveCustomer(){
-        Customer customer = new Customer("C001", "Navishka", "Galle", "Photo");
+        Customer customer = new Customer("C001", "lakshan", "Galle", "ProfilePic");
         Customer saveCustomer = customerRepo.save(customer);
 
         assertNotNull(saveCustomer);
     }
 
+    @Test
     void getCustomerByName(){
         addAllCustomers();
         List<Customer> customerList = customerRepo.findCustomersByName("lakshan");
