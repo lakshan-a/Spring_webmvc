@@ -36,6 +36,7 @@ class CustomerServiceImplTest {
         CustomerDto customer = customerService.saveCustomer(customerDto);
 
         assertNotEquals(null,customer);
+        assertNotEquals("C001",customer.getId());
 
         
     }
