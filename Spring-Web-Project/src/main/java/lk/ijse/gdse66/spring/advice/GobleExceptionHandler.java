@@ -18,6 +18,12 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/**
+ * @version: v0.0.1
+ * @author: LakshanR
+ * @date: 4/2/2024
+ */
+
 @RestControllerAdvice
 public class GobleExceptionHandler {
 
