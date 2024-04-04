@@ -15,9 +15,9 @@ import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
  * @date: 4/4/2024
  */
 
-@ExtendWith({SpringExtension.class})
-@ContextConfiguration(classes = WebRootConfig.class)
-//@SpringJUnitConfig
+/*@ExtendWith({SpringExtension.class})
+@ContextConfiguration(classes = WebRootConfig.class)*/
+@SpringJUnitConfig(classes = WebRootConfig.class)
 public class CustomerServiceImplTest {
 
 //    @Autowired
