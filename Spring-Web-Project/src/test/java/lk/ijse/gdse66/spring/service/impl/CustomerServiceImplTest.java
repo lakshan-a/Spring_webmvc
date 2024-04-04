@@ -23,6 +23,15 @@ class CustomerServiceImplTest {
     @Autowired
     CustomerService customerService;
 
+    @Autowired
+    CustomerDto addOneCustomer(){
+        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "ProfilePic");
+        return customerService.saveCustomer(customerDto);
+
+    }
+
+
+
     @Test  //test case ekak
     void getAllCustomers() {
 
@@ -43,6 +52,8 @@ class CustomerServiceImplTest {
     void getCustomerDetails() {
         assertThrows(NotFoundException.class, () ->customerService.getCustomerDetails("C001"));
 
+
+
         /*CustomerDto customerDto = customerService.saveCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel"));
         assertDoesNotThrow(() -> customerService.getCustomerDetails(customerDto.getId()));*/
 
@@ -61,7 +72,6 @@ class CustomerServiceImplTest {
 
     @Test
     void updateCustomer() {
-
         CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
 
         assertThrows(NotFoundException.class, () ->customerService.updateCustomer(new CustomerDto("C001", "Rashmika", "Galle", "Profilel")));
