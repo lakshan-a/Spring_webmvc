@@ -15,7 +15,7 @@ public class HelloSpringbootApplication {
 
     @Bean
     public ModelMapper modelMapper(){
-        return null;
+        return new ModelMapper();
     }
 
 

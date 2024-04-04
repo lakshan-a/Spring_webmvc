@@ -6,6 +6,7 @@ import lk.ijse.gdse66.hello_springboot.repository.CustomerRepo;
 import lk.ijse.gdse66.hello_springboot.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.UUID;
@@ -16,13 +17,16 @@ import java.util.UUID;
  * @date: 4/4/2024
  */
 
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
-    @Autowired
     CustomerRepo customerRepo;
-
-    @Autowired
     ModelMapper modelMapper;
+
+    public CustomerServiceImpl(CustomerRepo customerRepo, ModelMapper modelMapper) {
+        this.customerRepo = customerRepo;
+        this.modelMapper = modelMapper;
+    }
 
     @Override
     public List<CustomerDTO> getAllCustomer() {

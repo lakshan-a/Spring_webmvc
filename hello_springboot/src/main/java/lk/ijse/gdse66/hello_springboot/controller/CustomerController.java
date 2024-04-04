@@ -1,6 +1,5 @@
 package lk.ijse.gdse66.hello_springboot.controller;
 
-import jdk.jfr.Registered;
 import lk.ijse.gdse66.hello_springboot.dto.CustomerDTO;
 import lk.ijse.gdse66.hello_springboot.service.CustomerService;
 import org.springframework.http.HttpStatus;
@@ -20,7 +19,11 @@ import java.util.List;
 public class CustomerController {
 
 
-    CustomerService customerService;
+    private final CustomerService customerService;
+
+    public CustomerController(CustomerService customerService) {
+        this.customerService = customerService;
+    }
 
     @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     List<CustomerDTO> getAllCustomer(){
@@ -30,7 +33,9 @@ public class CustomerController {
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.CREATED)
     CustomerDTO saveCustomer(CustomerDTO customerDTO){
-        return customerService.saveCustomer(customerDTO)
+        return customerService.saveCustomer(customerDTO);
     }
+
+
 
 }

@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.hello_springboot.service;
 
 import lk.ijse.gdse66.hello_springboot.dto.CustomerDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @date: 4/4/2024
  */
 
+@Service
 public interface CustomerService {
 
     List<CustomerDTO> getAllCustomer();
