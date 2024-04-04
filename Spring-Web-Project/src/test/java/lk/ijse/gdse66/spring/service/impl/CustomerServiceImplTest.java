@@ -3,6 +3,7 @@ package lk.ijse.gdse66.spring.service.impl;
 import lk.ijse.gdse66.spring.config.WebRootConfig;
 import lk.ijse.gdse66.spring.dto.CustomerDto;
 import lk.ijse.gdse66.spring.service.CustomerService;
+import lk.ijse.gdse66.spring.service.exception.NotFoundException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,16 +25,17 @@ class CustomerServiceImplTest {
 
     @Test  //test case ekak
     void getAllCustomers() {
+        assertThrows(NotFoundException.class, () ->customerService.getCustomerDetails("C001"));
+
+
     }
 
     @Test  //test case ekak
     void getCustomerDetails() {
-//        CustomerDto customerDto = new CustomerDto("C001", "lakshan", "Galle", "Profilel");
-        CustomerDto customerDto = customerService.saveCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel"));
+        assertThrows(NotFoundException.class, () ->customerService.getCustomerDetails("C001"));
 
-//        CustomerDto customerDetails = customerService.getCustomerDetails(customer.getId());
-
-        assertDoesNotThrow(() -> customerService.getCustomerDetails(customerDto.getId()));
+        /*CustomerDto customerDto = customerService.saveCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel"));
+        assertDoesNotThrow(() -> customerService.getCustomerDetails(customerDto.getId()));*/
 
     }
 
@@ -50,10 +52,13 @@ class CustomerServiceImplTest {
 
     @Test
     void updateCustomer() {
+        assertThrows(NotFoundException.class, () ->customerService.updateCustomer(new CustomerDto("C001", "lakshan", "Galle", "Profilel")));
 
     }
 
     @Test
     void deleteCustomer() {
+        assertThrows(NotFoundException.class, () ->customerService.deleteCustomer("C001"));
+
     }
 }
