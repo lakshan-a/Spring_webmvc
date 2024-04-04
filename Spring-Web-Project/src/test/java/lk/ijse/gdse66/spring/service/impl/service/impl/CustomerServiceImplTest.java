@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.spring.service.impl;
+package lk.ijse.gdse66.spring.service.impl.service.impl;
 
 import lk.ijse.gdse66.spring.config.WebRootConfig;
 import lk.ijse.gdse66.spring.dto.CustomerDto;
