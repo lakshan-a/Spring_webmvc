@@ -1,8 +1,6 @@
 package lk.ijse.gdse66.springbootwithjwt.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lk.ijse.gdse66.springbootwithjwt.util.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,7 +23,9 @@ public class UserEntity {
     private String id;
     private String firstName;
     private String lastName;
+    @Column(unique = true)
     private String email;
     private String password;
+    @Enumerated(EnumType.STRING)
     private Role role;
 }
