@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import java.io.IOException;
@@ -27,7 +28,8 @@ public class JwdConfigurationFilter extends OncePerRequestFilter {
         String authenticationHeader = request.getHeader("AuthenticationHeader");
         if (authenticationHeader != null && authenticationHeader.startsWith("Bearer")){
             String jwt = authenticationHeader.substring(7);
-            if (ext)
+            String extractedUserName = jwtService.extractedUserName(jwt);
+            if (extractedUserName != null && SecurityContextHolder.getContext().getAuthentication()==null);
         }
     }
 }
