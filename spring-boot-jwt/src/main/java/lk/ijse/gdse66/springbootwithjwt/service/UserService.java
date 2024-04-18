@@ -9,6 +9,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
  * @date: 4/18/2024
  */
 public interface UserService {
+
     UserDetailsService userDetailService();
     void Save (UserDTO userDTO);
 }

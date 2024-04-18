@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.springbootwithjwt.dto;
 
 import jakarta.persistence.Table;
+import lk.ijse.gdse66.springbootwithjwt.util.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -23,4 +24,6 @@ public class UserDTO {
     private String lastName;
     private String email;
     private String password;
+    private Role role;
+
 }
