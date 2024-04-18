@@ -37,6 +37,7 @@ public class JwdServiceImpl implements JwdService {
         return extractClaims(token,claims -> claims.getSubject());
     }
 
+
     @Override
     public String generateToken(UserDetails userDetails) {
         HashMap<String,Object> claims =new HashMap<>();
@@ -54,7 +55,8 @@ public class JwdServiceImpl implements JwdService {
 
     @Override
     public boolean isTokenValid(String token, UserDetails userDetails) {
-        return false;
+        String subject = extractClaims(token,claims -> claims.getSubject());
+        return subject.equals(userDetails.getUsername()) && !isExpired(token);
     }
 
     private Key getSingKey(){
