@@ -4,7 +4,9 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SignatureAlgorithm;
 import lk.ijse.gdse66.springbootwithjwt.service.JwdService;
+import org.hibernate.metamodel.mapping.internal.SingleAttributeIdentifierMapping;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
@@ -45,6 +47,7 @@ public class JwdServiceImpl implements JwdService {
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(currentDate)
                 .setExpiration(expiredDate)
+                .signWith(getSingKey(),SignatureAlgorithm.HS256)
                 .compact();
         return accessToken;
     }
@@ -67,5 +70,10 @@ public class JwdServiceImpl implements JwdService {
     private <T> T extractClaims(String token, Function<Claims,T> claimsResolve){
        Claims claims = getAllClaims(token);
        return claimsResolve.apply(claims);
+    }
+
+    private boolean isExpired(String token){
+        Date expiredDate = extractClaims(token,claims -> claims.getExpiration());
+        return expiredDate.before(new Date());
     }
 }
