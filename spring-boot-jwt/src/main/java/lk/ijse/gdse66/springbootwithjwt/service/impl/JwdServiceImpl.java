@@ -11,7 +11,10 @@ import org.springframework.stereotype.Service;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.DESedeKeySpec;
+import javax.xml.crypto.Data;
 import java.security.Key;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.function.Function;
 
 /**
@@ -34,7 +37,16 @@ public class JwdServiceImpl implements JwdService {
 
     @Override
     public String generateToken(UserDetails userDetails) {
-        return null;
+        HashMap<String,Object> claims =new HashMap<>();
+        claims.put("role",userDetails.getAuthorities());
+        Date currentDate = new Date();
+        Date expiredDate = new Date (currentDate.getTime()+ 1000 * 600);
+        String accessToken = Jwts.builder().setClaims(claims)
+                .setSubject(userDetails.getUsername())
+                .setIssuedAt(currentDate)
+                .setExpiration(expiredDate)
+                .compact();
+        return accessToken;
     }
 
     @Override
