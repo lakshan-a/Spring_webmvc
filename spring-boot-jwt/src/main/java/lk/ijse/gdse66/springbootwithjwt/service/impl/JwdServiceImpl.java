@@ -48,7 +48,8 @@ public class JwdServiceImpl implements JwdService {
                 .setSubject(userDetails.getUsername())
                 .setIssuedAt(currentDate)
                 .setExpiration(expiredDate)
-                .signWith(getSingKey(),SignatureAlgorithm.HS256)
+                .signWith(getSingKey())
+//                .signWith(getSingKey(),SignatureAlgorithm.HS256)
                 .compact();
         return accessToken;
     }
