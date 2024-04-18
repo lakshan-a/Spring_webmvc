@@ -29,7 +29,7 @@ public class JwdServiceImpl implements JwdService {
 
     @Override
     public String extractUserName(String token) {
-        return null;
+        return extractClaims(token,claims -> claims.getSubject());
     }
 
     @Override
