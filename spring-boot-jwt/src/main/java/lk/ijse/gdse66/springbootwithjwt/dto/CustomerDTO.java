@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.springbootsecurity.dto;
+package lk.ijse.gdse66.springbootwithjwt.dto;
 
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;

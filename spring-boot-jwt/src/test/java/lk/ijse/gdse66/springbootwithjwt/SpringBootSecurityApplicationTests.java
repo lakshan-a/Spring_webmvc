@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.springbootsecurity;
+package lk.ijse.gdse66.springbootwithjwt;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

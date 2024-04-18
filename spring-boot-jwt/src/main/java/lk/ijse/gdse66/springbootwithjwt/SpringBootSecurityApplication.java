@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.springbootsecurity;
+package lk.ijse.gdse66.springbootwithjwt;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;

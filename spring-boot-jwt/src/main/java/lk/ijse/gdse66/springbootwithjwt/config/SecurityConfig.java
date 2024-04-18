@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.springbootsecurity.config;
+package lk.ijse.gdse66.springbootwithjwt.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -25,12 +25,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
+
                 .csrf(AbstractHttpConfigurer::disable)
-                .authorizeHttpRequests(authorize -> authorize
+
+                .authorizeHttpRequests((authorize) -> authorize
+                        .requestMatchers("/api/v1/auth").permitAll()
                         .anyRequest().authenticated()
                 )
+
                 .httpBasic(Customizer.withDefaults());
 //                .formLogin(Customizer.withDefaults());
+
         return http.build();
     }
 

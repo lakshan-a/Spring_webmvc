@@ -1,8 +1,8 @@
-package lk.ijse.gdse66.springbootsecurity.controller;
+package lk.ijse.gdse66.springbootwithjwt.controller;
 
 
-import lk.ijse.gdse66.springbootsecurity.dto.CustomerDTO;
-import lk.ijse.gdse66.springbootsecurity.service.CustomerService;
+import lk.ijse.gdse66.springbootwithjwt.dto.CustomerDTO;
+import lk.ijse.gdse66.springbootwithjwt.service.CustomerService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;

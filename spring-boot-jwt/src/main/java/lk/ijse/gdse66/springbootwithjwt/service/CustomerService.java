@@ -1,6 +1,6 @@
-package lk.ijse.gdse66.springbootsecurity.service;
+package lk.ijse.gdse66.springbootwithjwt.service;
 
-import lk.ijse.gdse66.springbootsecurity.dto.CustomerDTO;
+import lk.ijse.gdse66.springbootwithjwt.dto.CustomerDTO;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

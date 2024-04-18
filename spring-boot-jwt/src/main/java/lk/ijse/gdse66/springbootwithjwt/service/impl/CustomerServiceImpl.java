@@ -1,10 +1,10 @@
-package lk.ijse.gdse66.springbootsecurity.service.impl;
+package lk.ijse.gdse66.springbootwithjwt.service.impl;
 
 
-import lk.ijse.gdse66.springbootsecurity.dto.CustomerDTO;
-import lk.ijse.gdse66.springbootsecurity.entity.CustomerEntity;
-import lk.ijse.gdse66.springbootsecurity.repository.CustomerRepo;
-import lk.ijse.gdse66.springbootsecurity.service.CustomerService;
+import lk.ijse.gdse66.springbootwithjwt.dto.CustomerDTO;
+import lk.ijse.gdse66.springbootwithjwt.entity.CustomerEntity;
+import lk.ijse.gdse66.springbootwithjwt.repository.CustomerRepo;
+import lk.ijse.gdse66.springbootwithjwt.service.CustomerService;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package lk.ijse.gdse66.springbootsecurity.entity;
+package lk.ijse.gdse66.springbootwithjwt.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
