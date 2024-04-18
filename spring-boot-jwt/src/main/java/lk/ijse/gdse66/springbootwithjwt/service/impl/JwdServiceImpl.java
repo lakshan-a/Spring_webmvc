@@ -52,8 +52,8 @@ public class JwdServiceImpl implements JwdService {
         return body;
     }
 
-    private <T> T extractClaims(String token, Function<Claims,T>claimsTFunction){
+    private <T> T extractClaims(String token, Function<Claims,T> claimsResolve){
        Claims claims = getAllClaims(token);
-       return claimsTFunction.apply(claims);
+       return claimsResolve.apply(claims);
     }
 }
