@@ -15,8 +15,6 @@ import java.util.Properties;
  */
 public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
-
-
     public WebAppInitializer() {
         String property = System.getProperty("java.io.tmpdir");
         System.out.println(property);
