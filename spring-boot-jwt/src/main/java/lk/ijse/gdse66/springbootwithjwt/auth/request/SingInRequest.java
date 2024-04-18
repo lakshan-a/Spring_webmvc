@@ -1,6 +1,5 @@
-package lk.ijse.gdse66.springbootwithjwt.request;
+package lk.ijse.gdse66.springbootwithjwt.auth.request;
 
-import lk.ijse.gdse66.springbootwithjwt.util.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -16,11 +15,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class SingUpRequest {
-
-    private String firstName;
-    private String lastName;
+public class SingInRequest {
     private String email;
     private String password;
-    private Role role;
 }
