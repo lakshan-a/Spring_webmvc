@@ -1,5 +1,7 @@
 package lk.ijse.gdse66.springbootwithjwt.service.impl;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import lk.ijse.gdse66.springbootwithjwt.service.JwdService;
@@ -10,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.DESedeKeySpec;
 import java.security.Key;
+import java.util.function.Function;
 
 /**
  * @version: v0.0.1
@@ -42,5 +45,15 @@ public class JwdServiceImpl implements JwdService {
     private Key getSingKey(){
         byte[] bytes = Decoders.BASE64.decode(jwdKey);
         return Keys.hmacShaKeyFor(bytes);
+    }
+
+    private Claims getAllClaims(String token){
+        Claims body = Jwts.parser().setSigningKey(getSingKey()).build().parseClaimsJws(token).getBody();
+        return body;
+    }
+
+    private <T> T extractClaims(String token, Function<Claims,T>claimsTFunction){
+       Claims claims = getAllClaims(token);
+       return claimsTFunction.apply(claims);
     }
 }
