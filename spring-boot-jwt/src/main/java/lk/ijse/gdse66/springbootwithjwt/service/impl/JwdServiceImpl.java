@@ -1,6 +1,7 @@
 package lk.ijse.gdse66.springbootwithjwt.service.impl;
 
 import lk.ijse.gdse66.springbootwithjwt.service.JwdService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +14,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class JwdServiceImpl implements JwdService {
+
+    @Value("${token.key}")
+    String jwdKey;
+
     @Override
     public String extractUserName(String token) {
         return null;
