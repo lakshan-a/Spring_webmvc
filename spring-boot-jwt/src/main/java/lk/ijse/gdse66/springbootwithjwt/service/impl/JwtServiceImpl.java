@@ -4,16 +4,11 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
-import io.jsonwebtoken.security.SignatureAlgorithm;
-import lk.ijse.gdse66.springbootwithjwt.service.JwdService;
-import org.hibernate.metamodel.mapping.internal.SingleAttributeIdentifierMapping;
+import lk.ijse.gdse66.springbootwithjwt.service.JwtService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import javax.crypto.SecretKey;
-import javax.crypto.spec.DESedeKeySpec;
-import javax.xml.crypto.Data;
 import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
@@ -27,7 +22,7 @@ import java.util.function.Function;
 
 
 @Service
-public class JwdServiceImpl implements JwdService {
+public class JwtServiceImpl implements JwtService {
 
     @Value("${token.key}")
     String jwdKey;
